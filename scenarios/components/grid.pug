@@ -1,0 +1,27 @@
+- var pageTitle = 'Grid'
+doctype html
+html(lang="en")
+  head
+    include ../includes/head.pug
+  body
+    div.container
+      h1 UIPack:#{pageTitle}
+      include ../includes/nav.pug
+
+      div(grid="cols:1 md@cols:2")
+        div(class='bg:dark-90')
+          p mixin
+          div(grid="cols:2")
+            div(class='bg:dark-70') Lorem Ipsum
+            div(class='bg:dark-70') Lorem Ipsum
+
+        div(class='bg:dark-90') Lorem Ipsum
+        div(class='bg:dark-90') Lorem Ipsum
+        div(class='bg:dark-90') Lorem Ipsum
+
+
+
+
+
+
+    include ../includes/footer.pug

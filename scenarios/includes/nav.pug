@@ -1,0 +1,4 @@
+nav(class='navbar')
+  -var items = ['home', 'test', 'card', 'navbar', 'grid', 'form', 'tab', 'separator']
+  each item in items
+    a(href=item+'.pug' class="tag")=item

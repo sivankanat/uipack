@@ -1,0 +1,27 @@
+/* uipack separators */
+/* default */
+hr {
+  border: none;
+  border-top: 1px solid map-get($theme, "border-color");
+}
+/* styled */
+hr.separator,
+hr[separator] {
+  position: relative;
+  overflow: inherit;
+}
+
+hr[separator~="has\:circle"]:before {
+  content: "";
+  display: block;
+  width: 34px;
+  background: #ddd;
+  height: 14px;
+  margin-top: -8px;
+  z-index: 5;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+  border-left: 10px solid #fff;
+  border-right: 10px solid #fff;
+}

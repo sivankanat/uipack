@@ -1,0 +1,38 @@
+/* grid */
+// percentage( x / x) convert to px
+.grid,
+[grid] {
+  display: grid;
+  grid-gap: map-get($pd_mg_sizes, sm);
+}
+
+/* grid gap */
+@each $name, $size in $pd_mg_sizes {
+  [grid~="gap:#{$name}"] {
+    grid-gap: $size;
+  }
+}
+
+@for $i from 1 through 12 {
+  [grid~="cols:#{$i}"] {
+    $size: percentage($i / 100) * 0.1;
+    grid-template-columns: repeat(#{$i}, minmax($size, 1fr));
+  }
+}
+
+@each $key, $val in $screen-sizes {
+  @media screen and(min-width: #{$val}) {
+    @for $i from 1 through 12 {
+      [grid~="#{$key}@cols:#{$i}"] {
+        $size: percentage($i / 100) * 0.1;
+        grid-template-columns: repeat(#{$i}, minmax($size, 1fr));
+      }
+    }
+
+    @each $name, $size in $pd_mg_sizes {
+      [grid~="#{$key}@gap:#{$name}"] {
+        grid-gap: $size;
+      }
+    }
+  }
+}

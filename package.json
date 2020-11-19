@@ -1,0 +1,71 @@
+{
+  "name": "uipack",
+  "version": "0.1.1-dev.0",
+  "description": "UIPack is a frontend framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo hi",
+    "git:test": "git add . && git commit -m test && git push && git push --tags",
+    "git": "git add . && git push && git push --tags",
+    "v:major": "npm version major && npm run git",
+    "v:minor": "npm version minor && npm run git",
+    "v:patch": "npm version patch && npm run git",
+    "v:dev": "npm version prerelease --preid=dev --no-git-tag",
+    "pcss@a": "postcss dist/css/uipack.css --no-map --use autoprefixer -d dist/css",
+    "sass": "node-sass -r src/scss/uipack.scss dist/css/uipack.css",
+    "b:sass": "npm run sass && npm run pcss@a && postcss dist/css/uipack.css --no-map --use cssnano -o dist/css/uipack.min.css",
+    "w:sass": "npm run sass && npm run sass -- -w",
+    "js": "rollup --config ./conf/rollup.js",
+    "b:js": "npm run js && terser dist/js/uipack.js -o dist/js/uipack.min.js -c -m",
+    "w:js": "npm run js -- --watch",
+    "b:all": "npm run b:sass && npm run b:js",
+    "bs": "node conf/bs"
+  },
+  "dependencies": {
+    "pug": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "autoprefixer": "^10.0.1",
+    "browser-sync": "^2.26.13",
+    "browserlist": "^1.0.1",
+    "cssnano": "^4.1.10",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.1.6",
+    "postcss-cli": "^8.3.0",
+    "rollup": "^2.33.3",
+    "semver": "^7.3.2",
+    "terser": "^5.4.0"
+  },
+  "browserslist": [
+    "last 4 version",
+    "> 1%",
+    "IE 9"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sivankanat/uipack.git"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "js",
+    "css-framework",
+    "ui-framework"
+  ],
+  "author": "Şivan Kanat <sivankanat@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sivankanat/uipack/issues"
+  },
+  "homepage": "https://github.com/sivankanat/uipack#readme"
+}

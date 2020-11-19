@@ -1,0 +1,35 @@
+- var pageTitle = 'Card'
+doctype html
+html(lang="en")
+  head
+    include ../includes/head.pug
+  body
+    div.container
+      h1 UIPack:#{pageTitle}
+      include ../includes/nav.pug
+
+      div(grid='cols:2 gap:lg')
+        div
+          h3 simple
+          .card
+            h2.card-title Card Title
+            p.reset Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+        // advanced
+        div
+          h3 advanced
+          div(class='card')
+            .card-header
+              h2.card-title Card Title
+
+            .card-body
+              p.reset Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut   labore et dolore magna aliqua.
+
+            .card-footer
+              button button
+
+
+
+
+
+    include ../includes/footer.pug

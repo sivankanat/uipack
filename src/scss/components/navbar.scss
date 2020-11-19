@@ -1,0 +1,78 @@
+/* components/navbar */
+$navbarItemMr: map-get($navbar, item-margin);
+.navbar {
+  min-height: map-get($navbar, min-height);
+  display: flex;
+  align-items: center;
+  a {
+    @include transition;
+  }
+  a:hover {
+    @include link-hover();
+  }
+  .app-title {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 120%;
+  }
+  & ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.navbar-item {
+  margin-right: $navbarItemMr;
+  > p {
+    margin: 0;
+    padding: 0;
+  }
+  &:last-child {
+    margin-right: unset;
+  }
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  > li {
+    margin-right: $navbarItemMr;
+    &:last-child {
+      margin-right: unset;
+    }
+    &[parent] {
+      [trigger] {
+        cursor: pointer;
+      }
+      [child] {
+        box-shadow: map-get($box-shadows, "sm");
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        width: 200px;
+        position: absolute;
+        background-color: white;
+        right: 0;
+        top: 1.5rem;
+        padding: 1rem;
+        z-index: 100;
+        ul li {
+          margin-bottom: 0.3rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        &.active {
+          visibility: visible;
+          top: 2rem;
+          opacity: 1;
+          transition-delay: 0s;
+        }
+      }
+    }
+  }
+}

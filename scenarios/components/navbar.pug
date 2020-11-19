@@ -1,0 +1,61 @@
+- var pageTitle = 'Navbar'
+doctype html
+html(lang="en")
+  head
+    include ../includes/head.pug
+  body
+    div.container
+      h1 UIPack:#{pageTitle}
+      include ../includes/nav.pug
+
+      .demo
+        p paragraph
+
+    nav(class='navbar bg:dark-90')
+      div(class='navbar-item')
+        a.app-title UIPack
+
+      .navbar-item
+        p(class='reset text:muted') Lorem Ipsum
+
+      div(class='navbar-item ml:a')
+        ul.navbar-menu
+          li 
+            a(href="") Menu Item
+          li
+            a(href="") Menu Item
+          li
+            a(href="") Menu Item
+
+          li(class='relative' parent)
+            span(trigger) Dropdown
+            div(child)
+              p Lorem Ipsum
+              ul
+                li
+                  a(href="") Child Item
+                li
+                  a(href="") Child Item
+                li
+                  a(href="") Child Item
+
+          li(class='relative' parent)
+            span(trigger) Dropdown 2
+            div(child)
+              p Lorem Ipsum
+              ul
+                li
+                  a(href="") Child Item
+                li
+                  a(href="") Child Item
+                li
+                  a(href="") Child Item
+
+
+
+
+
+
+
+
+    include ../includes/footer.pug

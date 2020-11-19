@@ -1,0 +1,130 @@
+/* base */
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap'); */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: map-get($defaults, "font");
+  font-size: map-get($defaults, "font-size");
+  line-height: map-get($defaults, "line-height");
+}
+
+body {
+  margin: 0;
+}
+
+/* link */
+a,
+a:link,
+a:active {
+  text-decoration: none;
+  color: map-get($defaults, "link-color");
+}
+
+/* Heading */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 1.1rem;
+}
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+/* text */
+p {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+i {
+  opacity: 0.6;
+}
+blockquote {
+  margin: 0.7rem auto;
+  padding: 0.3rem 0.5rem;
+  border-left: 2px solid rgb(173, 173, 173);
+  opacity: 0.6;
+}
+code {
+  background: hsl(220, 5%, 95% / 1);
+  font-size: inherit;
+  font-family: monospace;
+  line-height: inherit;
+  padding: 0.1rem 0.3rem;
+}
+
+details {
+  padding: 1rem;
+  background: hsl(220, 5%, 95% / 1);
+  margin: 1rem 0;
+  > * {
+    padding-top: 0.5rem;
+  }
+  summary {
+    padding-top: 0;
+    cursor: pointer;
+  }
+}
+
+/* list */
+ul,
+ol {
+  padding-left: 2rem;
+  margin: 1rem 0;
+}
+::marker {
+  color: hsl(224, 5%, 40% / 1);
+}
+
+/* form */
+button,
+[type="button"],
+[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+:focus {
+  outline: none;
+}
+[hidden] {
+  display: none;
+}
+/* other */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.relative {
+  position: relative;
+}

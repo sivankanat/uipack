@@ -1,0 +1,63 @@
+.ml\:a,
+.ml\:auto {
+  margin-left: auto;
+}
+
+.mr\:a,
+.mr\:auto {
+  margin-right: auto;
+}
+
+/* margins */
+@each $name, $value in $pd-mg-sizes {
+  .mx\:#{$name} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .my\:#{$name} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+  .mg\:#{$name} {
+    margin: $value;
+  }
+  .mt\:#{$name} {
+    margin-top: $value;
+  }
+  .ml\:#{$name} {
+    margin-left: $value;
+  }
+  .mb\:#{$name} {
+    margin-bottom: $value;
+  }
+  .mr\:#{$name} {
+    margin-right: $value;
+  }
+}
+
+/* paddings */
+@each $name, $value in $pd-mg-sizes {
+  .px\:#{$name} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .py\:#{$name} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+  .pd\:#{$name} {
+    padding: $value;
+  }
+  .pt\:#{$name} {
+    padding-top: $value;
+  }
+  .pl\:#{$name} {
+    padding-left: $value;
+  }
+  .pb\:#{$name} {
+    padding-bottom: $value;
+  }
+  .pr\:#{$name} {
+    padding-right: $value;
+  }
+}

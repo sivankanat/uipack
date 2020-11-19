@@ -1,0 +1,11 @@
+/* helpers / shadows */
+
+.box-sh {
+  box-shadow: map-get($box-shadows, sm);
+}
+
+@each $name, $value in $box-shadows {
+  .box-sh\:#{$name} {
+    box-shadow: $value;
+  }
+}

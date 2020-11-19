@@ -1,0 +1,36 @@
+- var pageTitle = 'Tabs'
+doctype html
+html(lang="en")
+  head
+    include ../includes/head.pug
+  body
+    div.container
+      h1 UIPack:#{pageTitle}
+      include ../includes/nav.pug
+
+
+      div(class="card mx:a mt:8 box-sh:md wd(6/12) ")
+        h3 tab
+        .tabs(uip-tabs)
+          ul(tab-menu)
+            li(class='active' tab='1') Tab 1
+            li(tab='2') Tab 2
+
+          ul(tab-cont)
+            li(class='active' tab='1') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, nam nisi sapiente molestiae explicabo exercitationem blanditiis aliquid ratione doloremque labore, corporis nulla assumenda obcaecati, delectus dicta vitae consequuntur qui error.
+            li(tab='2') 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, nam nisi sapiente molestiae explicabo exercitationem blanditiis aliquid ratione doloremque labore, corporis nulla assumenda obcaecati, delectus dicta vitae consequuntur qui error.
+
+      div(class="card mx:a mt:8 box-sh:md wd(6/12) ")
+        h3 tab2
+        .tabs(uip-tabs)
+          ul(tab-menu)
+            li(class='active' tab='1') Tab 1
+            li(tab='2') Tab 2
+
+          ul(tab-cont)
+            li(class='active' tab='1') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, nam nisi sapiente molestiae explicabo exercitationem blanditiis aliquid ratione doloremque labore, corporis nulla assumenda obcaecati, delectus dicta vitae consequuntur qui error.
+            li(tab='2') 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, nam nisi sapiente molestiae explicabo exercitationem blanditiis aliquid ratione doloremque labore, corporis nulla assumenda obcaecati, delectus dicta vitae consequuntur qui error.
+
+
+
+    include ../includes/footer.pug

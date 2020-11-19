@@ -1,0 +1,16 @@
+/* ws width */
+.wd\:auto,
+.wd\:a,
+.wd\(a\),
+.wd\(auto\) {
+  width: auto;
+  max-width: auto;
+}
+.wd\:100,
+.wd\(100\) {
+  width: 100%;
+  max-width: 100%;
+}
+
+@include width();
+@include res-width();

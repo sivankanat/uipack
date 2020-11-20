@@ -1,5 +1,6 @@
+/*! UIPack 0.1.1-dev.0 | https://github.com/sivankanat/uipack#readme | MIT */
 (function (factory) {
-  typeof define === 'function' && define.amd ? define(factory) :
+  typeof define === 'function' && define.amd ? define('UIPack', factory) :
   factory();
 }((function () { 'use strict';
 

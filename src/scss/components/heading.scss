@@ -1,0 +1,52 @@
+//heading
+.uip-heading,
+[uip-heading] {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  .subtitle {
+    font-size: map-get($defaults, "font-size");
+    font-weight: normal;
+  }
+}
+
+.uip-heading {
+  &-divider {
+    border-bottom: 1px solid map-get($theme, "border-color");
+  }
+}
+
+[uip-heading~="line"] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  row-gap: 0.5rem;
+  .concrete {
+    margin: 0 0.5rem;
+  }
+  &::before,
+  &::after {
+    content: "";
+    border-bottom: 1px solid;
+    border-color: map-get($theme, "border-color");
+  }
+  &::before {
+    content: none;
+  }
+  &::after {
+    content: "";
+    flex: auto;
+  }
+}
+
+[uip-heading~="center"] {
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+  }
+}

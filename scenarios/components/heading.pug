@@ -1,0 +1,37 @@
+- var pageTitle = 'Heading'
+doctype html
+html(lang="en")
+  head
+    include ../includes/head.pug
+  body
+    div.container
+      h1 UIPack:#{pageTitle}
+      include ../includes/nav.pug
+
+      h2(uip-heading)        
+        span UIP Heading Simple
+
+      h2(class="my:lg uip-heading-divider" uip-heading)
+        p(class="subtitle" text="meta") Lorem Ipsum
+        span UIP Heading Divider
+
+      h2(class="mt:md" uip-heading="line")
+        span UIP Heading Line
+        p(class="subtitle mb:remove ml:sm" text="meta") Lorem Ipsum
+
+      h2(class="mt:md" uip-heading="line")
+        .concreate          
+          span(class="") UIP Heading Line concreate
+          p(class="subtitle" text="meta") Lorem Ipsum
+
+      h2(class="mt:md" uip-heading="line center")
+        .concreate(text="center")
+          span UIP Heading Line center
+          p(class="subtitle" text="meta") Lorem Ipsum
+
+
+
+
+
+
+    include ../includes/footer.pug

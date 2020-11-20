@@ -9,7 +9,7 @@
 }
 
 // create  hsl(val, val, val)
-@each $name, $val in $colors {
+@each $name, $val in $color_codes {
   @for $i from 1 through 19 {
     .bg\:#{$name}-#{5*$i} {
       background-color: hsl($val, 95%, (5 * $i));

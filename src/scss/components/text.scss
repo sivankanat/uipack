@@ -1,0 +1,51 @@
+/* uip text */
+[text~="uppercase"] {
+  text-transform: uppercase;
+}
+//center
+[text~="center"] {
+  text-align: center;
+}
+[text~="left"] {
+  text-align: left;
+}
+[text~="right"] {
+  text-align: right;
+}
+
+//center
+[text~="italic"] {
+  font-style: italic;
+}
+[text~="bold"] {
+  font-weight: bold;
+}
+
+[text~="meta"] {
+  color: map-get($colors, "gray-70");
+}
+
+.text {
+  font-size: map-get($theme, "font-size");
+  //sizes
+  @each $key, $val in $text_sizes {
+    &\:#{$key} {
+      font-size: $val;
+    }
+  }
+  &\:meta {
+    color: map-get($colors, "gray-70");
+  }
+  &\:uppercase {
+    text-transform: uppercase;
+  }
+  &\:lowercase {
+    text-transform: lowercase;
+  }
+  &\:capitalize {
+    text-transform: capitalize;
+  }
+  &\:italic {
+    font-style: italic;
+  }
+}

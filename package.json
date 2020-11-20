@@ -1,8 +1,8 @@
 {
   "name": "uipack",
-  "version": "0.1.1-dev.0",
+  "version": "0.1.1-dev.1",
   "description": "UIPack is a frontend framework",
-  "main": "index.js",
+  "main": "dist/js/uipack.js",
   "scripts": {
     "test": "echo hi",
     "git:test": "git add . && git commit -m test && git push && git push --tags",

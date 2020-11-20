@@ -8,6 +8,10 @@ export default {
   output: {
     file: 'dist/js/' + file_basename + '.js',
     format: 'umd',
+    amd: {
+      id: "UIPack"
+    },
+    banner: "/*! UIPack 0.1.1-dev.0 | https://github.com/sivankanat/uipack#readme | MIT */",
     name: file_basename
   },
   plugins: [

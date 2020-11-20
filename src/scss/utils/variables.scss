@@ -25,11 +25,16 @@ $theme: (
   border-color: #ddd,
 );
 
+$colors: (
+  //gray
+  gray-70: hsl(216deg, 10%, 70%)
+);
+
 // mouse events
 $mouse-events: ();
 
 // bg colors
-$colors: (
+$color_codes: (
   //50 is center
   "orange": 39,
   "yellow": 60,
@@ -63,6 +68,13 @@ $pd-mg-sizes: (
   "xl": 3rem,
 );
 
+$text_sizes: (
+  "sm": 93%,
+  "md": 125%,
+  "lg": 150%,
+  "xl": 175%,
+);
+
 // shadow
 $box-shadows: (
   remove: "none",
@@ -75,4 +87,9 @@ $box-shadows: (
 $navbar: (
   min-height: 60px,
   item-margin: 1rem,
+);
+
+//uip-heading
+$uip_heading_sizes: (
+  small: "",
 );

@@ -30,6 +30,10 @@ bs.watch("src/js/**/*.js", async function (event, file) {
     await bundle.write({
       file: 'dist/js/' + file_basename + '.js',
       format: "umd",
+      amd: {
+        id: "UIPack"
+      },
+      banner: "/*! UIPack 0.1.2-dev.0 | https://github.com/sivankanat/uipack#readme | MIT */",
       name: file_basename
     });
   }
@@ -43,8 +47,8 @@ bs.init({
   ],
   ui: false,
   port: 8000,
-  reloadDelay: 400,
-  reloadDebounce: 400,
+  reloadDelay: 800,
+  reloadDebounce: 800,
   server: {
     baseDir: './',
     directory: true
@@ -72,7 +76,6 @@ bs.init({
               }
             });
           }
-
         });
       }
       next();
@@ -80,24 +83,20 @@ bs.init({
   ]
 })
 
-/* bs.watch("scenarios/.pug", function (event, file) {
-  if (event == 'change') {
-    setTimeout(function () {
-      bs.reload()
-    }, 800)
-  }
-}) */
-
 bs.watch("src/scss/**/*.scss", function (event, file) {
   if (event === "change") {
-    setTimeout(function () {
-      var sass_render = sass.renderSync({
+    setTimeout(() => {
+      sass.render({
         file: sass_input,
         sourceMap: false
+      }, function (err, res) {
+        if (!err) {
+          postcss([autoprefixer]).process(res.css, { from: 'undefined' }).then(result => {
+            fs.writeFile("dist/css/uipack.css", result, () => true)
+          })
+        } else console.log(err)
+
       })
-      postcss([autoprefixer]).process(sass_render.css).then(result => {
-        fs.writeFile(sass_output + '/' + file_basename + '.css', result, () => true)
-      })
-    }, 500)
+    }, 400)
   }
 });

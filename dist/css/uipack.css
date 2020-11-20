@@ -1,4 +1,4 @@
-/*! UIPack 2.0.1-dev.0 | https://github.com/sivankanat/uipack#readme | MIT */
+/*! UIPack 0.1.1-dev.0 | https://github.com/sivankanat/uipack#readme | MIT */
 /*!*/
 /* base */
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap");
@@ -74,7 +74,8 @@ code {
   font-size: inherit;
   font-family: monospace;
   line-height: inherit;
-  padding: 0.1rem 0.3rem; }
+  padding: 0.1rem 0.3rem;
+  display: inline-block; }
 
 details {
   padding: 1rem;
@@ -170,6 +171,7 @@ p.reset {
   .navbar a:hover {
     opacity: 0.7; }
   .navbar .app-title {
+    cursor: pointer;
     margin: 0;
     padding: 0;
     font-weight: bold;
@@ -546,7 +548,8 @@ textarea {
 input[type="checkbox"],
 input[type="radio"] {
   width: 16px;
-  height: 16px; }
+  height: 16px;
+  margin: 0; }
 
 /* buttons */
 .btn,
@@ -884,6 +887,104 @@ form.form {
   .xl\@wd\(12\/12\) {
     width: calc(100% * 12 / 12);
     max-width: calc(100% * 12 / 12); } }
+
+.uip-heading,
+[uip-heading] {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden; }
+  .uip-heading .subtitle,
+  [uip-heading] .subtitle {
+    font-size: 15px;
+    font-weight: normal; }
+
+.uip-heading-divider {
+  border-bottom: 1px solid #ddd; }
+
+[uip-heading~="line"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  row-gap: 0.5rem; }
+  [uip-heading~="line"] .concrete {
+    margin: 0 0.5rem; }
+  [uip-heading~="line"]::before, [uip-heading~="line"]::after {
+    content: "";
+    border-bottom: 1px solid;
+    border-color: #ddd; }
+  [uip-heading~="line"]::before {
+    content: none; }
+  [uip-heading~="line"]::after {
+    content: "";
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto; }
+
+[uip-heading~="center"]::before, [uip-heading~="center"]::after {
+  content: "";
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
+/* uip text */
+[text~="uppercase"] {
+  text-transform: uppercase; }
+
+[text~="center"] {
+  text-align: center; }
+
+[text~="left"] {
+  text-align: left; }
+
+[text~="right"] {
+  text-align: right; }
+
+[text~="italic"] {
+  font-style: italic; }
+
+[text~="bold"] {
+  font-weight: bold; }
+
+[text~="meta"] {
+  color: #abb1ba; }
+
+.text\:sm {
+  font-size: 93%; }
+
+.text\:md {
+  font-size: 125%; }
+
+.text\:lg {
+  font-size: 150%; }
+
+.text\:xl {
+  font-size: 175%; }
+
+.text\:meta {
+  color: #abb1ba; }
+
+.text\:uppercase {
+  text-transform: uppercase; }
+
+.text\:lowercase {
+  text-transform: lowercase; }
+
+.text\:capitalize {
+  text-transform: capitalize; }
+
+.text\:italic {
+  font-style: italic; }
 
 /* colors */
 .bg\:dark-5 {

@@ -8,28 +8,39 @@ html(lang="en")
       h1 UIPack:#{pageTitle}
       include ../includes/nav.pug
 
-      div(grid='cols:2 gap:lg')
+      div(grid="cols:3 gap:md")
         div
-          h3 simple
-          .card
-            h2.card-title Card Title
-            p.reset Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          div(class="card pd:sm" border="l4 solid warning")
+            h3 Basic card
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et   dolore magna aliqua.
 
-        // advanced
+        //default
         div
-          h3 advanced
-          div(class='card')
+          div(class="card card-default")
+            .card-body
+              h3 Default card
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et     dolore magna aliqua.
+
+        div
+          div(class="card card-default")
             .card-header
-              h2.card-title Card Title
+              h3.card-title Card (header/body/footer)
 
             .card-body
-              p.reset Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut   labore et dolore magna aliqua.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur iusto eaque ipsam esse amet neque  autem vero optio labore ducimus illo maxime, nulla, odio atque beatae sint, dolor iste molestias?
 
             .card-footer
-              button button
+              button(class="btn:sm") Button
 
+        div
+          div(class="card card-default")
+            figure.card-media
+              img(src="scenarios/assets/3.jpg")
 
-
+            div.card-footer
+              h3.card-title Lorem Ipsum
+              p(class="text:sm text:meta") By admin
+              button(class="btn:sm") Buy
 
 
     include ../includes/footer.pug

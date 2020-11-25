@@ -1,0 +1,69 @@
+/**
+* UIPack Borders
+* 
+*/
+
+/* custom borders */
+@each $name, $vals in $border_shapes {
+  .border\:#{$name} {
+    @each $key, $val in $vals {
+      #{$key}: #{$val};
+    }
+  }
+}
+
+/* colors */
+@each $key, $val in $colors {
+  .border\:#{$key},
+  [border*="#{$key}"] {
+    border-color: #{$val};
+  }
+}
+
+/* styles */
+
+$shapes: ("solid", "dashed", "dotted");
+@each $shape in $shapes {
+  .border\:#{$shape},
+  [border*="#{$shape}"] {
+    border-style: #{$shape};
+  }
+}
+
+/* shapes */
+$rds: (
+  "round": 2px,
+  "pill": 700px,
+  "circle": 50%,
+);
+@each $key, $val in $rds {
+  .border\:#{$key},
+  [border*="#{$key}"] {
+    border-radius: $val;
+  }
+}
+
+/* sizes */
+@for $i from 1 through 6 {
+  .border\:#{$i},
+  [border~="#{$i}"] {
+    border-width: #{$i}px;
+  }
+}
+
+/* edges */
+$edges: (
+  "top": "t",
+  "right": "r",
+  "bottom": "b",
+  "left": "l",
+);
+
+@for $i from 1 through 6 {
+  @each $key, $val in $edges {
+    .border\:#{$val}#{$i},
+    [border~="#{$val}#{$i}"] {
+      border-#{$key}-width: #{$i}px;
+    }
+  }
+}

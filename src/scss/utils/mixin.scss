@@ -8,24 +8,22 @@
   transition: all 0.4s ease-in-out;
 }
 
-// width eg: wd(x/x)
+// width eg: wd:x/x
 @mixin width {
   @for $i from 1 through 12 {
-    .wd\(#{$i}\/12\) {
-      width: calc(100% * #{$i} / 12);
-      max-width: calc(100% * #{$i} / 12);
+    .wd\:#{$i}\/12 {
+      width: percentage($i/12);
     }
   }
 }
 
 // width eg: md@wd(x/x)
 @mixin res-width() {
-  @each $name, $size in $screen-sizes {
+  @each $name, $size in $screen_sizes {
     @media screen and(min-width: $size) {
       @for $i from 1 through 12 {
-        .#{$name}\@wd\(#{$i}\/12\) {
-          width: calc(100% * #{$i} / 12);
-          max-width: calc(100% * #{$i} / 12);
+        .#{$name}\@wd\:#{$i}\/12 {
+          width: percentage($i/12);
         }
       }
     }

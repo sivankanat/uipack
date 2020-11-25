@@ -8,8 +8,22 @@
   margin-right: auto;
 }
 
+.mx\:a,
+.mx\:auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 /* margins */
-@each $name, $value in $pd-mg-sizes {
+
+$margin_list: (
+  "top": "mt",
+  "right": "mr",
+  "left": "ml",
+  "bottom": "mb",
+);
+
+@each $name, $value in $spaces {
   .mx\:#{$name} {
     margin-left: $value;
     margin-right: $value;
@@ -19,24 +33,23 @@
     margin-bottom: $value;
   }
   .mg\:#{$name} {
-    margin: $value;
+    margin: $value !important;
   }
-  .mt\:#{$name} {
-    margin-top: $value;
-  }
-  .ml\:#{$name} {
-    margin-left: $value;
-  }
-  .mb\:#{$name} {
-    margin-bottom: $value;
-  }
-  .mr\:#{$name} {
-    margin-right: $value;
+  @each $key, $val in $margin_list {
+    .#{$val}\:#{$name} {
+      margin-#{$key}: $value;
+    }
   }
 }
 
 /* paddings */
-@each $name, $value in $pd-mg-sizes {
+$paddings: (
+  "top": "pt",
+  "right": "pr",
+  "left": "pl",
+  "bottom": "pb",
+);
+@each $name, $value in $spaces {
   .px\:#{$name} {
     padding-left: $value;
     padding-right: $value;
@@ -46,18 +59,11 @@
     padding-bottom: $value;
   }
   .pd\:#{$name} {
-    padding: $value;
+    padding: $value !important;
   }
-  .pt\:#{$name} {
-    padding-top: $value;
-  }
-  .pl\:#{$name} {
-    padding-left: $value;
-  }
-  .pb\:#{$name} {
-    padding-bottom: $value;
-  }
-  .pr\:#{$name} {
-    padding-right: $value;
+  @each $key, $val in $paddings {
+    .#{$val}\:#{$name} {
+      padding-#{$key}: $value;
+    }
   }
 }

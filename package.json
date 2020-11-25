@@ -1,6 +1,6 @@
 {
   "name": "uipack",
-  "version": "0.1.1-dev.1",
+  "version": "0.4.0-dev.0",
   "description": "UIPack is a frontend framework",
   "main": "dist/js/uipack.js",
   "scripts": {
@@ -11,6 +11,8 @@
     "v:minor": "npm version minor && npm run git",
     "v:patch": "npm version patch && npm run git",
     "v:dev": "npm version prerelease --preid=dev --no-git-tag",
+    "v:preminor": "npm version preminor --preid=dev --no-git-tag",
+    "v:prepatch": "npm version prepatch --preid=dev --no-git-tag",
     "pcss@a": "postcss dist/css/uipack.css --no-map --use autoprefixer -d dist/css",
     "sass": "node-sass -r src/scss/uipack.scss dist/css/uipack.css",
     "b:sass": "npm run sass && npm run pcss@a && postcss dist/css/uipack.css --no-map --use cssnano -o dist/css/uipack.min.css",
@@ -49,7 +51,8 @@
   ],
   "files": [
     "dist",
-    "src"
+    "src",
+    "conf"
   ],
   "repository": {
     "type": "git",

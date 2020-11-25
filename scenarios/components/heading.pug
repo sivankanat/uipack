@@ -8,23 +8,39 @@ html(lang="en")
       h1 UIPack:#{pageTitle}
       include ../includes/nav.pug
 
-      h2(uip-heading)        
-        span UIP Heading Simple
+      h2(class="mt:md" heading="line center sm")
+        .concreate(text="center")
+          span UIP Heading Line center atr
+          p(class="subtitle" text="meta") Lorem Ipsum
 
-      h2(class="my:lg uip-heading-divider" uip-heading)
+      h2(class="mt:sm heading:sm heading:line heading:center")
+        .concreate(text="center")
+          span UIP Heading Line center class
+          p(class="subtitle" text="meta") Lorem Ipsum
+
+      h2(class="mt:md" heading) UIP Heading Simple
+      h2(heading="line")
+        span.subtitle(class="text:meta") sizes
+
+      h2(class="heading:sm") UIP Heading Small
+      h2(class="heading:md") UIP Heading Medium
+      h2(class="heading:lg") UIP Heading Large
+      h2(class="heading:xl") UIP Heading XLarge
+
+      h2(class="my:lg heading:divider")
         p(class="subtitle" text="meta") Lorem Ipsum
         span UIP Heading Divider
 
-      h2(class="mt:md" uip-heading="line")
+      h2(class="mt:md heading heading:line")
         span UIP Heading Line
         p(class="subtitle mb:remove ml:sm" text="meta") Lorem Ipsum
 
-      h2(class="mt:md" uip-heading="line")
+      h2(class="mt:md heading heading:line")
         .concreate          
           span(class="") UIP Heading Line concreate
           p(class="subtitle" text="meta") Lorem Ipsum
 
-      h2(class="mt:md" uip-heading="line center")
+      h2(class="mt:md" heading="line center sm")
         .concreate(text="center")
           span UIP Heading Line center
           p(class="subtitle" text="meta") Lorem Ipsum

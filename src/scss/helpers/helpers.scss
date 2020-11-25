@@ -1,1 +1,8 @@
 
+/* box sizing */
+@each $key, $val in $box_sizes {
+  .box\:#{$key} {
+    width: #{$val};
+    height: #{$val};
+  }
+}

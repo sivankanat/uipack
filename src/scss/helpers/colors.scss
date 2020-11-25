@@ -1,21 +1,25 @@
 /* colors */
 @for $i from 1 through 19 {
-  .bg\:dark-#{5 * $i} {
-    background-color: hsl(220, 6%, (5 * $i));
+  .bg\:dark\:#{5 * $i} {
+    background-color: hsl(220deg, 6%, (5 * $i));
   }
-  .clr\:dark-#{5 * $i} {
-    color: hsl(220, 6%, (5 * $i));
+  .color\:dark\:#{5 * $i} {
+    color: hsl(220deg, 6%, (5 * $i));
   }
 }
 
 // create  hsl(val, val, val)
 @each $name, $val in $color_codes {
   @for $i from 1 through 19 {
-    .bg\:#{$name}-#{5*$i} {
+    .bg\:#{$name}\:#{5*$i} {
       background-color: hsl($val, 95%, (5 * $i));
     }
-    .clr\:#{$name}-#{5*$i} {
+    .color\:#{$name}\:#{5*$i} {
       color: hsl($val, 95%, (5 * $i));
+    }
+
+    .border\:#{$name}\:#{5*$i} {
+      border-color: hsl($val, 95%, (5 * $i)) !important;
     }
   }
 }

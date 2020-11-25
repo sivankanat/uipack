@@ -4,20 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap'); */
 
 *,
-*::before,
-*::after {
+::before,
+::after {
   box-sizing: border-box;
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-  font-family: map-get($defaults, "font");
-  font-size: map-get($defaults, "font-size");
-  line-height: map-get($defaults, "line-height");
+  border: 0;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
+  font-family: map-get($theme, "font");
+  font-size: map-get($theme, "font-size");
+  line-height: map-get($theme, "line-height");
+  color: map-get($theme, "font-color");
 }
 
 /* link */
@@ -25,7 +24,7 @@ a,
 a:link,
 a:active {
   text-decoration: none;
-  color: map-get($defaults, "link-color");
+  color: map-get($theme, "link-color");
 }
 
 /* Heading */
@@ -61,7 +60,7 @@ h6 {
 /* text */
 p {
   margin: 0;
-  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 i {
   opacity: 0.6;
@@ -114,18 +113,34 @@ button,
 :focus {
   outline: none;
 }
-[hidden] {
-  display: none;
+
+/* media */
+figure {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* other */
 .container {
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
 }
 .relative {
   position: relative;
+}
+
+::selection {
+  @each $key, $val in map-get($theme, "selection") {
+    #{$key}: #{$val};
+  }
 }

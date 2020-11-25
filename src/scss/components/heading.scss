@@ -1,25 +1,39 @@
 //heading
-.uip-heading,
-[uip-heading] {
+
+[class*="heading:"],
+[heading],
+.heading {
+  //default
   margin: 0;
   padding: 0;
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
   position: relative;
   overflow: hidden;
+
   .subtitle {
-    font-size: map-get($defaults, "font-size");
+    font-size: map-get($theme, "font-size");
     font-weight: normal;
   }
 }
 
-.uip-heading {
-  &-divider {
-    border-bottom: 1px solid map-get($theme, "border-color");
+//sizes
+@each $key, $val in $heading_sizes {
+  .heading\:#{$key},
+  [heading*="#{$key}"] {
+    font-size: $val;
   }
 }
 
-[uip-heading~="line"] {
+//divider
+.heading\:divider,
+[heading*="divider"] {
+  border-bottom: 1px solid map-get($theme, "border-color");
+}
+
+//line
+.heading\:line,
+[heading*="line"] {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -43,7 +57,9 @@
   }
 }
 
-[uip-heading~="center"] {
+//center
+.heading\:center,
+[heading*="center"] {
   &::before,
   &::after {
     content: "";

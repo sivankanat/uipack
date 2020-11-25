@@ -1,23 +1,32 @@
 /* card */
 
 .card {
-  box-shadow: map-get($box-shadows, "sm");
-  $padding: map-get($pd_mg_sizes, "md");
-  padding: $padding;
-  .card-header {
-    border-bottom: 1px solid map-get($theme, "border-color");
-    padding: $padding 0;
+  position: relative;
+
+  &-default {
+    box-shadow: map-get($shadows, "sm");
+  } //default
+
+  .card-body,
+  .card-header,
+  .card-footer,
+  .card-title {
+    padding: map-get($spaces, "md");
+  }
+
+  .card-footer,
+  .card-header,
+  .card-body {
     .card-title {
-      margin: 0;
+      padding: 0;
     }
   }
-  .card-body {
-    padding: $padding 0;
+
+  .card-header {
+    border-bottom: 1px solid map-get($theme, "border-color");
   }
 
   .card-footer {
-    padding: $padding 0;
-    border-top: 1px solid map-get($theme, border-color);
-    display: flow-root;
+    border-top: 1px solid map-get($theme, "border-color");
   }
 }

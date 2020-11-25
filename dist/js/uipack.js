@@ -1,4 +1,4 @@
-/*! UIPack 0.1.1-dev.0 | https://github.com/sivankanat/uipack#readme | MIT */
+/*! UIPack 0.4.0-dev.0 | https://github.com/sivankanat/uipack#readme | MIT */
 (function (factory) {
   typeof define === 'function' && define.amd ? define('UIPack', factory) :
   factory();
@@ -80,18 +80,18 @@
     name: "new name"
   });
 
-  /*  UIP_Tab */
+  /*  UIP_Tabs */
 
-  var UIP_Tab = {
-    name: '[uıp-tabs]',
+  var UIP_Tabs = {
+    name: 'tabs',
     cls: '.tabs',
     tab_attr: '[tab]',
-    menu_cls: "[tab-menu]",
+    menu_cls: ".tab-menu",
     menu_click: function menu_click() {
       var x = this;
       query("".concat(this.cls, " ").concat(this.menu_cls, " ").concat(this.tab_attr)).on('click', function () {
         var parent = this.closest(x.cls);
-        var target_tab = parent.querySelector("[tab-cont] [tab=\"".concat(this.getAttribute('tab'), "\"]"));
+        var target_tab = parent.querySelector(".tab-cont [tab=\"".concat(this.getAttribute('tab'), "\"]"));
         parent.querySelectorAll('.active').forEach(function (item) {
           return item.classList.remove('active');
         });
@@ -109,6 +109,6 @@
       this.menu_click();
     }
   };
-  UIP_Tab.ctr();
+  UIP_Tabs.ctr();
 
 })));

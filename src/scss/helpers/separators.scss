@@ -1,17 +1,18 @@
-/* uipack separators */
-/* default */
+/**
+* UIPack separators
+*
+*/
 hr {
   border: none;
   border-top: 1px solid map-get($theme, "border-color");
 }
 /* styled */
-hr.separator,
-hr[separator] {
+hr.separator {
   position: relative;
   overflow: inherit;
 }
 
-hr[separator~="has\:circle"]:before {
+hr.separator\:circle:before {
   content: "";
   display: block;
   width: 34px;

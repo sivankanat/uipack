@@ -1,11 +1,16 @@
-/* helpers / shadows */
+/**
+* UIPack Shadows
+*
+* @Helpers
+*
+*/
 
-.box-sh {
-  box-shadow: map-get($box-shadows, sm);
+.shadow {
+  box-shadow: map-get($shadows, sm);
 }
 
-@each $name, $value in $box-shadows {
-  .box-sh\:#{$name} {
+@each $name, $value in $shadows {
+  .shadow\:#{$name} {
     box-shadow: $value;
   }
 }

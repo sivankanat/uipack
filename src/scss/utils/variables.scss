@@ -1,5 +1,5 @@
-//defaults
-$defaults: (
+// theme
+$theme: (
   font: (
     "Catamaran",
     -apple-system,
@@ -13,27 +13,35 @@ $defaults: (
     "Helvetica Neue",
     sans-serif,
   ),
-  font-size: 15px,
+  font-color: #221f25,
+  font-size: 12pt,
   line-height: 1.4,
   link-color: inherit,
-);
-
-// theme
-$theme: (
   bg-muted: hsl(220deg, 8%, 95%),
   bg-muted-2: hsl(220deg, 8%, 90%),
   border-color: #ddd,
+  selection: (
+    "background": #221f25,
+    "color": white,
+  ),
 );
 
+// navbar
+$navbar: (
+  item-margin: 1rem,
+);
+
+//colors
 $colors: (
-  //gray
-  gray-70: hsl(216deg, 10%, 70%)
+  "primary": hsl(225deg, 100%, 50%),
+  "secondary": hsl(225deg, 10%, 55%),
+  "success": hsl(135deg, 85%, 40%),
+  "danger": hsl(350deg, 70%, 55%),
+  "warning": hsl(40deg, 100%, 50%),
+  "info": hsl(180deg, 100%, 25%),
+  "white": hsl(240deg, 100%, 99%),
 );
 
-// mouse events
-$mouse-events: ();
-
-// bg colors
 $color_codes: (
   //50 is center
   "orange": 39,
@@ -50,7 +58,7 @@ $color_codes: (
 );
 
 // screen sizes
-$screen-sizes: (
+$screen_sizes: (
   xs: 414px,
   sm: 640px,
   md: 768px,
@@ -58,16 +66,33 @@ $screen-sizes: (
   xl: 1280px,
 );
 
+// width sizes
+$box_sizes: (
+  xs: 2rem,
+  sm: 3rem,
+  md: 4rem,
+  lg: 6rem,
+  xl: 8rem,
+);
+
 // spacing
-$pd-mg-sizes: (
+$spaces: (
   "remove": 0,
   "xs": 0.25rem,
-  "sm": 0.5rem,
-  "md": 1rem,
+  "sm": 0.75rem,
+  "md": 1.1rem,
   "lg": 2rem,
   "xl": 3rem,
 );
 
+//heading sizes
+$heading_sizes: (
+  "sm": 125%,
+  "md": 150%,
+  "lg": 200%,
+  "xl": 250%,
+);
+//text sizes
 $text_sizes: (
   "sm": 93%,
   "md": 125%,
@@ -76,20 +101,21 @@ $text_sizes: (
 );
 
 // shadow
-$box-shadows: (
+$shadows: (
+  none: "none",
   remove: "none",
-  sm: 0px 2px 6px rgba(0, 0, 0, 0.08),
-  md: 0px 4px 12px rgba(0, 0, 0, 0.08),
-  lg: 0px 8px 24px rgba(0, 0, 0, 0.08),
+  sm: 0px 2px 6px rgba(0, 0, 0, 0.1),
+  md: 0px 4px 12px rgba(0, 0, 0, 0.09),
+  lg: 0px 8px 24px rgba(0, 0, 0, 0.09),
 );
 
-// navbar
-$navbar: (
-  min-height: 60px,
-  item-margin: 1rem,
-);
-
-//uip-heading
-$uip_heading_sizes: (
-  small: "",
+// borders
+$border_shapes: (
+  none: (
+    "border": none,
+  ),
+  default: (
+    "border": 1px solid map-get($theme, "border-color"),
+    "border-radius": 2px,
+  ),
 );

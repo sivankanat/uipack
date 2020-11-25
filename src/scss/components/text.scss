@@ -1,30 +1,7 @@
-/* uip text */
-[text~="uppercase"] {
-  text-transform: uppercase;
-}
-//center
-[text~="center"] {
-  text-align: center;
-}
-[text~="left"] {
-  text-align: left;
-}
-[text~="right"] {
-  text-align: right;
-}
-
-//center
-[text~="italic"] {
-  font-style: italic;
-}
-[text~="bold"] {
-  font-weight: bold;
-}
-
-[text~="meta"] {
-  color: map-get($colors, "gray-70");
-}
-
+/**
+* UIPack text styles
+*
+*/
 .text {
   font-size: map-get($theme, "font-size");
   //sizes
@@ -34,7 +11,7 @@
     }
   }
   &\:meta {
-    color: map-get($colors, "gray-70");
+    color: map-get($colors, "secondary");
   }
   &\:uppercase {
     text-transform: uppercase;
@@ -47,5 +24,17 @@
   }
   &\:italic {
     font-style: italic;
+  }
+  &\:bold {
+    font-weight: bold;
+  }
+  &\:center {
+    text-align: center;
+  }
+  &\:left {
+    text-align: left;
+  }
+  &\:right {
+    text-align: right;
   }
 }

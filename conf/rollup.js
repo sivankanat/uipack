@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import comonjs from '@rollup/plugin-commonjs';
 const file_basename = 'uipack';
+const pjson = require("../package.json");
 
 export default {
   input: 'src/js/' + file_basename + '.js',
@@ -11,7 +12,7 @@ export default {
     amd: {
       id: "UIPack"
     },
-    banner: "/*! UIPack 0.1.1-dev.0 | https://github.com/sivankanat/uipack#readme | MIT */",
+    banner: "/*! UIPack " + pjson.version + " | https://github.com/sivankanat/uipack#readme | MIT */",
     name: file_basename
   },
   plugins: [

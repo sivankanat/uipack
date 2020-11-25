@@ -2,6 +2,7 @@
 
 input:not([type="checkbox"]):not([type="radio"]),
 button,
+.btn,
 textarea,
 select {
   display: block;
@@ -18,8 +19,11 @@ select {
     border-color: hsl(172deg, 32%, 71%);
   }
 }
+.btn,
 button {
   line-height: inherit;
+  background: none;
+  text-align: center;
 }
 
 button,
@@ -53,7 +57,6 @@ input[type="radio"] {
 }
 
 /* buttons */
-.btn,
 .btn {
   padding: 0.5rem 1rem;
   &\:sm {

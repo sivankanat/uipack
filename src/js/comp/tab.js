@@ -1,18 +1,19 @@
 import { query } from '../query'
 
-/*  UIP_Tab */
-export const UIP_Tab = {
-  name: '[uıp-tabs]',
+
+/*  UIP_Tabs */
+export const UIP_Tabs = {
+  name: 'tabs',
   cls: '.tabs',
   tab_attr: '[tab]',
 
-  menu_cls: "[tab-menu]",
+  menu_cls: ".tab-menu",
 
   menu_click: function () {
     let x = this;
     query(`${this.cls} ${this.menu_cls} ${this.tab_attr}`).on('click', function () {
       let parent = this.closest(x.cls)
-      let target_tab = parent.querySelector(`[tab-cont] [tab="${this.getAttribute('tab')}"]`)
+      let target_tab = parent.querySelector(`.tab-cont [tab="${this.getAttribute('tab')}"]`)
 
       parent.querySelectorAll('.active').forEach((item) => item.classList.remove('active'))
 
@@ -31,5 +32,5 @@ export const UIP_Tab = {
   }
 }
 
-UIP_Tab.ctr()
+UIP_Tabs.ctr()
 

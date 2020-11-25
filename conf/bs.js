@@ -1,3 +1,5 @@
+const { version } = require('os');
+
 const
   bs = require('browser-sync').create(),
   pug = require('pug'),
@@ -9,7 +11,8 @@ const
   cssnano = require('cssnano'),
   rollup = require('rollup'),
   comonjs = require("@rollup/plugin-commonjs"),
-  { babel } = require('@rollup/plugin-babel')
+  { babel } = require('@rollup/plugin-babel'),
+  pjson = require("../package.json")
   ;
 
 const file_basename = 'uipack';
@@ -33,7 +36,7 @@ bs.watch("src/js/**/*.js", async function (event, file) {
       amd: {
         id: "UIPack"
       },
-      banner: "/*! UIPack 0.1.2-dev.0 | https://github.com/sivankanat/uipack#readme | MIT */",
+      banner: "/*! UIPack " + pjson.version + " | https://github.com/sivankanat/uipack#readme | MIT */",
       name: file_basename
     });
   }

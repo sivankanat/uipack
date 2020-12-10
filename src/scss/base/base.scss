@@ -1,8 +1,4 @@
 /* base */
-@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap'); */
-
 *,
 ::before,
 ::after {
@@ -25,6 +21,9 @@ a:link,
 a:active {
   text-decoration: none;
   color: map-get($theme, "link-color");
+}
+.pointer {
+  cursor: pointer;
 }
 
 /* Heading */
@@ -127,7 +126,7 @@ img {
 }
 
 /* other */
-.container {
+.#{$put}container {
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
@@ -140,7 +139,7 @@ img {
 }
 
 ::selection {
-  @each $key, $val in map-get($theme, "selection") {
+  @each $key, $val in $selection {
     #{$key}: #{$val};
   }
 }

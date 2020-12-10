@@ -1,24 +1,51 @@
 /* colors */
 @for $i from 1 through 19 {
-  .bg\:dark\:#{5 * $i} {
+  .#{$put}bg\:dark\:#{5 * $i} {
     background-color: hsl(220deg, 6%, (5 * $i));
   }
-  .color\:dark\:#{5 * $i} {
+  .#{$put}color\:dark\:#{5 * $i} {
     color: hsl(220deg, 6%, (5 * $i));
+  }
+}
+
+@each $name, $val in $colors {
+  .#{$put}bg\:#{$name} {
+    background-color: #{$val} !important;
+  }
+  .#{$put}color\:#{$name} {
+    color: $val !important;
+  }
+  .#{$put}border\:#{$name} {
+    border-color: $val !important;
+  }
+}
+
+//linears
+@each $name, $val in $linears {
+  .#{$put}bg\:#{$name} {
+    background-image: #{$val};
+  }
+  .#{$put}color\:#{$name} {
+    color: $val;
+  }
+  .#{$put}border\:#{$name} {
+    border: 1px solid transparent;
+    background: linear-gradient(to right, white, white), #{$val};
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
   }
 }
 
 // create  hsl(val, val, val)
 @each $name, $val in $color_codes {
   @for $i from 1 through 19 {
-    .bg\:#{$name}\:#{5*$i} {
+    .#{$put}bg\:#{$name}\:#{5*$i} {
       background-color: hsl($val, 95%, (5 * $i));
     }
-    .color\:#{$name}\:#{5*$i} {
+    .#{$put}color\:#{$name}\:#{5*$i} {
       color: hsl($val, 95%, (5 * $i));
     }
-
-    .border\:#{$name}\:#{5*$i} {
+    .#{$put}border\:#{$name}\:#{5*$i} {
       border-color: hsl($val, 95%, (5 * $i)) !important;
     }
   }

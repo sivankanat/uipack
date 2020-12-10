@@ -2,7 +2,7 @@
 * UIPack text styles
 *
 */
-.text {
+.#{$put}text {
   font-size: map-get($theme, "font-size");
   //sizes
   @each $key, $val in $text_sizes {

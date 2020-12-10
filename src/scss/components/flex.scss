@@ -5,7 +5,7 @@
 
 /* flex gap */
 @each $name, $size in $spaces {
-  [flex~="gap:#{$name}"] {
+  [#{$put}flex~="gap:#{$name}"] {
     flex-direction: row;
     margin-left: -#{$size};
     margin-bottom: -#{$size};
@@ -16,8 +16,8 @@
   }
 }
 
-.flex,
-[flex] {
+.#{$put}flex,
+[#{$put}flex] {
   display: flex;
   > * {
     width: auto;
@@ -27,27 +27,27 @@
   }
 }
 
-[flex*="fw:wrap"] {
+[#{$put}flex*="fw:wrap"] {
   flex-wrap: wrap;
 }
 
-[flex*="ai:center"] {
+[#{$put}flex*="ai:center"] {
   align-items: center;
 }
 
-[flex~="jc:center"] {
+[#{$put}flex~="jc:center"] {
   justify-content: center;
 }
 
-[flex~="fd:row"] {
+[#{$put}flex~="fd:row"] {
   flex-direction: row;
 }
 
-[flex~="fd:col"] {
+[#{$put}flex~="fd:col"] {
   flex-direction: column;
 }
 
-[flex~="ac:stretch"] {
+[#{$put}flex~="ac:stretch"] {
   flex-wrap: wrap;
   align-content: stretch;
 }

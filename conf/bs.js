@@ -1,5 +1,3 @@
-const { version } = require('os');
-
 const
   bs = require('browser-sync').create(),
   pug = require('pug'),

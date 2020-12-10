@@ -2,11 +2,11 @@
 * UIPack list styles
 *
 */
-ul.list {
+ul.#{$put}list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-ul.list li {
+ul.#{$put}list li {
   margin-bottom: 0.5rem;
 }

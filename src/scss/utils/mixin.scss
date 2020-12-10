@@ -11,7 +11,7 @@
 // width eg: wd:x/x
 @mixin width {
   @for $i from 1 through 12 {
-    .wd\:#{$i}\/12 {
+    .#{$put}wd\:#{$i}\/12 {
       width: percentage($i/12);
     }
   }
@@ -22,7 +22,7 @@
   @each $name, $size in $screen_sizes {
     @media screen and(min-width: $size) {
       @for $i from 1 through 12 {
-        .#{$name}\@wd\:#{$i}\/12 {
+        .#{$put}#{$name}\@wd\:#{$i}\/12 {
           width: percentage($i/12);
         }
       }

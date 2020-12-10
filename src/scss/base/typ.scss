@@ -1,8 +1,8 @@
 /* typography */
-a.reset {
+a.#{$put}reset {
   color: inherit !important;
 }
-p.reset {
+p.#{$put}reset {
   margin: 0 !important;
   padding: 0 !important;
 }

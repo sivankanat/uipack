@@ -7,12 +7,12 @@ hr {
   border-top: 1px solid map-get($theme, "border-color");
 }
 /* styled */
-hr.separator {
+hr.#{$put}separator {
   position: relative;
   overflow: inherit;
 }
 
-hr.separator\:circle:before {
+hr.#{$put}separator\:circle:before {
   content: "";
   display: block;
   width: 34px;

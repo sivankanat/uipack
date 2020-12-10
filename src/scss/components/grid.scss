@@ -1,21 +1,21 @@
 /* grid */
 // percentage( x / x) convert to px
-.grid,
-[grid] {
+.#{$put}grid,
+[#{$put}grid] {
   display: grid;
   grid-gap: map-get($spaces, sm);
 }
 
 /* grid gap */
 @each $name, $size in $spaces {
-  [grid~="gap:#{$name}"] {
+  [#{$put}grid~="gap:#{$name}"] {
     grid-gap: $size;
   }
 }
 
 
 @for $i from 1 through 12 {
-  [grid~="cols:#{$i}"] {
+  [#{$put}grid~="cols:#{$i}"] {
     $size: percentage($i / 100) * 0.1;
     grid-template-columns: repeat(#{$i}, minmax($size, 1fr));
   }
@@ -25,14 +25,14 @@
 @each $key, $val in $screen_sizes {
   @media screen and(min-width: #{$val}) {
     @for $i from 1 through 12 {
-      [grid~="#{$key}@cols:#{$i}"] {
+      [#{$put}grid~="#{$key}@cols:#{$i}"] {
         $size: percentage($i / 100) * 0.1;
         grid-template-columns: repeat(#{$i}, minmax($size, 1fr));
       }
     }
 
     @each $name, $size in $spaces {
-      [grid~="#{$key}@gap:#{$name}"] {
+      [#{$put}grid~="#{$key}@gap:#{$name}"] {
         grid-gap: $size;
       }
     }

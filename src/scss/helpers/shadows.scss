@@ -5,12 +5,12 @@
 *
 */
 
-.shadow {
+.#{$put}shadow {
   box-shadow: map-get($shadows, sm);
 }
 
 @each $name, $value in $shadows {
-  .shadow\:#{$name} {
+  .#{$put}shadow\:#{$name} {
     box-shadow: $value;
   }
 }

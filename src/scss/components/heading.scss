@@ -1,8 +1,8 @@
 //heading
 
-[class*="heading:"],
-[heading],
-.heading {
+[class*="#{$put}heading:"],
+[#{$put}heading],
+.#{$put}heading {
   //default
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@
   position: relative;
   overflow: hidden;
 
-  .subtitle {
+  .#{$put}subtitle {
     font-size: map-get($theme, "font-size");
     font-weight: normal;
   }
@@ -19,21 +19,21 @@
 
 //sizes
 @each $key, $val in $heading_sizes {
-  .heading\:#{$key},
-  [heading*="#{$key}"] {
+  .#{$put}heading\:#{$key},
+  [#{$put}heading*="#{$key}"] {
     font-size: $val;
   }
 }
 
 //divider
-.heading\:divider,
-[heading*="divider"] {
+.#{$put}heading\:divider,
+[#{$put}heading*="divider"] {
   border-bottom: 1px solid map-get($theme, "border-color");
 }
 
 //line
-.heading\:line,
-[heading*="line"] {
+.#{$put}heading\:line,
+[#{$put}heading*="line"] {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -58,8 +58,8 @@
 }
 
 //center
-.heading\:center,
-[heading*="center"] {
+.#{$put}heading\:center,
+[#{$put}heading*="center"] {
   &::before,
   &::after {
     content: "";

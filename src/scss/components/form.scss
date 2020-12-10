@@ -39,6 +39,7 @@ button::-moz-focus-inner,
   padding: 0;
 }
 
+
 textarea {
   min-height: 70px;
 }
@@ -57,7 +58,7 @@ input[type="radio"] {
 }
 
 /* buttons */
-.btn {
+.#{$put}btn {
   padding: 0.5rem 1rem;
   &\:sm {
     padding: 0.25rem 0.5rem;
@@ -71,13 +72,13 @@ input[type="radio"] {
 }
 
 /* form */
-form.form {
-  label .helping {
+form.#{$put}form {
+  label .#{$put}helping {
     color: #aaa;
     font-size: 92%;
     margin: 0;
   }
-  .field\:h {
+  .#{$put}field\:h {
     display: flex;
     flex-direction: row;
     margin-bottom: 1rem;
@@ -91,7 +92,7 @@ form.form {
   }
 
   /* v */
-  .field\:v {
+  .#{$put}field\:v {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;

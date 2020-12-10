@@ -1,32 +1,32 @@
 /* card */
 
-.card {
+.#{$put}card {
   position: relative;
 
   &-default {
     box-shadow: map-get($shadows, "sm");
   } //default
 
-  .card-body,
-  .card-header,
-  .card-footer,
-  .card-title {
+  .#{$put}card-body,
+  .#{$put}card-header,
+  .#{$put}card-footer,
+  .#{$put}card-title {
     padding: map-get($spaces, "md");
   }
 
-  .card-footer,
-  .card-header,
-  .card-body {
-    .card-title {
+  .#{$put}card-footer,
+  .#{$put}card-header,
+  .#{$put}card-body {
+    .#{$put}card-title {
       padding: 0;
     }
   }
 
-  .card-header {
+  .#{$put}card-header {
     border-bottom: 1px solid map-get($theme, "border-color");
   }
 
-  .card-footer {
+  .#{$put}card-footer {
     border-top: 1px solid map-get($theme, "border-color");
   }
 }

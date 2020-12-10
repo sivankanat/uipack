@@ -1,7 +1,11 @@
+// !important
+// usage via tag e.g uipack-wd:3/12
+$put: "";
+
 // theme
 $theme: (
   font: (
-    "Catamaran",
+    Catamaran,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -20,10 +24,6 @@ $theme: (
   bg-muted: hsl(220deg, 8%, 95%),
   bg-muted-2: hsl(220deg, 8%, 90%),
   border-color: #ddd,
-  selection: (
-    "background": #221f25,
-    "color": white,
-  ),
 );
 
 // navbar
@@ -55,6 +55,11 @@ $color_codes: (
   "purple": 300,
   "teal": 180,
   "indigo": 275
+);
+
+//linears
+$linears: (
+  "linear": "linear-gradient(0deg, #28B4D7, #28B4D7)",
 );
 
 // screen sizes
@@ -110,6 +115,13 @@ $shadows: (
 );
 
 // borders
+$border_radius: (
+  "round": 2px,
+  "pill": 700px,
+  "circle": 50%,
+  "20": 20px,
+);
+
 $border_shapes: (
   none: (
     "border": none,
@@ -119,3 +131,23 @@ $border_shapes: (
     "border-radius": 2px,
   ),
 );
+
+$selection: (
+  "background": #221f25,
+  "color": white,
+);
+
+:root {
+  @each $key, $val in $theme {
+    --#{$key}: #{$val};
+  }
+  @each $key, $val in $colors {
+    --color-#{$key}: #{$val};
+  }
+  @each $key, $val in $linears {
+    --#{$key}: #{$val};
+  }
+  @each $key, $val in $shadows {
+    --shadow-#{$key}: #{$val};
+  }
+}

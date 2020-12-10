@@ -1,6 +1,42 @@
-.tag {
+.#{$put}tag {
   background-color: map-get($theme, "bg-muted-2");
   margin-right: 0.3rem;
   padding: 0.1rem 0.5rem;
   line-height: initial;
+}
+
+/* hide-show */
+
+.#{$put}hide {
+  display: none !important;
+}
+.#{$put}show {
+  display: block !important;
+}
+
+@each $name, $size in $screen_sizes {
+  @media screen and(min-width: $size) {
+    .#{$name}\@hide {
+      display: none !important;
+    }
+    .#{$name}\@show {
+      display: block !important;
+    }
+  }
+}
+
+/* icons */
+.#{$put}icon-btn,
+[#{$put}icon-btn] {
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color;
+  font-size: 20px;
 }

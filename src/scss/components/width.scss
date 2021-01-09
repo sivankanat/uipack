@@ -1,4 +1,6 @@
-/* ws width */
+/**
+* width
+*/
 .#{$put}wd\:auto,
 .#{$put}wd\:a {
   width: auto;
@@ -11,8 +13,22 @@
 .#{$put}wd\:max {
   width: max-content;
 }
+.#{$put}wd\:min {
+  width: min-content;
+}
+.#{$put}wd\:vw {
+  width: 100vw;
+}
+.#{$put}wd\:full {
+  width: 100%;
+}
+
+/* height */
 .#{$put}hg\:100 {
   height: 100%;
+}
+.#{$put}hg\:vh {
+  height: 100vh;
 }
 
 @include width();

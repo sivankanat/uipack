@@ -24,6 +24,7 @@
   }
   > .expand {
     flex: 1;
+    min-width: 1rem;
   }
 }
 
@@ -50,4 +51,10 @@
 [#{$put}flex~="ac:stretch"] {
   flex-wrap: wrap;
   align-content: stretch;
+}
+
+/* other */
+.basis\:a,
+.basis\:auto {
+  flex: 0 0 auto;
 }

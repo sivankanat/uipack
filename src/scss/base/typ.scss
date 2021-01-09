@@ -6,3 +6,9 @@ p.#{$put}reset {
   margin: 0 !important;
   padding: 0 !important;
 }
+ul.#{$put}reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+

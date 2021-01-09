@@ -9,10 +9,45 @@
 }
 
 // width eg: wd:x/x
+$prt: (
+  1: 3,
+  2: 3,
+);
+$prt2: (
+  1: 4,
+  2: 4,
+  3: 4,
+);
+
+$prt3: (
+  1: 5,
+  2: 5,
+  3: 5,
+  4: 5,
+);
+
 @mixin width {
   @for $i from 1 through 12 {
     .#{$put}wd\:#{$i}\/12 {
       width: percentage($i/12);
+    }
+  }
+  // ptr
+  @each $key, $val in $prt {
+    .#{$put}wd\:#{$key}\/#{$val} {
+      width: percentage($key/$val);
+    }
+  }
+  // ptr2
+  @each $key, $val in $prt2 {
+    .#{$put}wd\:#{$key}\/#{$val} {
+      width: percentage($key/$val);
+    }
+  }
+  // ptr3
+  @each $key, $val in $prt3 {
+    .#{$put}wd\:#{$key}\/#{$val} {
+      width: percentage($key/$val);
     }
   }
 }
@@ -21,9 +56,28 @@
 @mixin res-width() {
   @each $name, $size in $screen_sizes {
     @media screen and(min-width: $size) {
+      //12
       @for $i from 1 through 12 {
         .#{$put}#{$name}\@wd\:#{$i}\/12 {
           width: percentage($i/12);
+        }
+      }
+      // ptr
+      @each $key, $val in $prt {
+        .#{$put}#{$name}\@wd\:#{$key}\/#{$val} {
+          width: percentage($key/$val);
+        }
+      }
+      // ptr2
+      @each $key, $val in $prt2 {
+        .#{$put}#{$name}\@wd\:#{$key}\/#{$val} {
+          width: percentage($key/$val);
+        }
+      }
+      // ptr3
+      @each $key, $val in $prt3 {
+        .#{$put}#{$name}\@wd\:#{$key}\/#{$val} {
+          width: percentage($key/$val);
         }
       }
     }

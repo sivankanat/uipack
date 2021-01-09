@@ -49,16 +49,17 @@
       name: "navbar",
       cls: query('.navbar'),
       parent: {
-        cls: "[parent]",
-        child: "[child]",
-        trigger: query('.navbar [parent] [trigger]'),
+        cls: ".parent",
+        child: ".sub",
+        trigger: query('.navbar .parent .trigger'),
         _click: ""
       }
     },
     clck_fn: function clck_fn() {
-      this.config.parent.trigger.on('click', function () {
+      this.config.parent.trigger.on('click', function (e) {
+        e.preventDefault();
         var nm = UIP_Navbar.config.name;
-        this.closest('[parent]').querySelector('[child]').classList.toggle('active');
+        this.closest('.parent').querySelector('.sub').classList.toggle('active');
       });
     },
     conf: function conf(obj) {

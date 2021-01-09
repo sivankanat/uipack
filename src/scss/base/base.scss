@@ -1,9 +1,15 @@
 /* base */
 *,
-::before,
-::after {
+:after,
+:before {
   box-sizing: border-box;
-  border: 0;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
 }
 
 body {
@@ -61,9 +67,7 @@ p {
   margin: 0;
   padding-bottom: 0.5rem;
 }
-i {
-  opacity: 0.6;
-}
+
 blockquote {
   margin: 0.7rem auto;
   padding: 0.3rem 0.5rem;
@@ -93,11 +97,7 @@ details {
 }
 
 /* list */
-ul,
-ol {
-  padding-left: 2rem;
-  margin: 1rem 0;
-}
+
 ::marker {
   color: hsl(224, 5%, 40% / 1);
 }

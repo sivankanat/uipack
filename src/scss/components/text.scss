@@ -37,4 +37,14 @@
   &\:right {
     text-align: right;
   }
+  &\:lth {
+    text-decoration: line-through;
+  }
+}
+
+/* weigths */
+@each $weight in (100, 200, 300, 400, 500, 600, 700) {
+  .text\:#{$weight} {
+    font-weight: #{$weight} !important;
+  }
 }

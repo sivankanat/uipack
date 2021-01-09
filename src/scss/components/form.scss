@@ -6,7 +6,6 @@ button,
 textarea,
 select {
   display: block;
-  margin: 0;
   padding: 0.2rem 0.4rem;
   line-height: none;
   font-family: inherit;
@@ -38,7 +37,6 @@ button::-moz-focus-inner,
   border-style: none;
   padding: 0;
 }
-
 
 textarea {
   min-height: 70px;
@@ -98,4 +96,21 @@ form.#{$put}form {
     gap: 0.3rem;
     margin-bottom: 1rem;
   }
+  /* filed:g */
+  .#{$put}field\:g {
+    display: flex;
+    margin-bottom: 1rem;
+    > * {
+      max-width: 100%;
+      flex: 1;
+      margin-right: 1rem;
+      > input {
+        width: 100%;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
+

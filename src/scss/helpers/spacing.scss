@@ -13,9 +13,14 @@
   margin-right: auto;
   margin-left: auto;
 }
+.#{$put}mg\:reset {
+  margin: 0 !important;
+}
+.#{$put}pd\:reset {
+  padding: 0 !important;
+}
 
 /* margins */
-
 $margin_list: (
   "top": "#{$put}mt",
   "right": "#{$put}mr",
@@ -29,15 +34,15 @@ $margin_list: (
     margin-right: $value;
   }
   .#{$put}my\:#{$name} {
-    margin-top: $value;
-    margin-bottom: $value;
+    margin-top: $value !important;
+    margin-bottom: $value !important;
   }
   .#{$put}mg\:#{$name} {
     margin: $value !important;
   }
   @each $key, $val in $margin_list {
     .#{$val}\:#{$name} {
-      margin-#{$key}: $value;
+      margin-#{$key}: $value !important;
     }
   }
 }
@@ -51,19 +56,19 @@ $paddings: (
 );
 @each $name, $value in $spaces {
   .#{$put}px\:#{$name} {
-    padding-left: $value!important;
-    padding-right: $value!important;
+    padding-left: $value !important;
+    padding-right: $value !important;
   }
   .#{$put}py\:#{$name} {
-    padding-top: $value!important;
-    padding-bottom: $value!important;
+    padding-top: $value !important;
+    padding-bottom: $value !important;
   }
   .#{$put}pd\:#{$name} {
     padding: $value !important;
   }
   @each $key, $val in $paddings {
     .#{$val}\:#{$name} {
-      padding-#{$key}: $value!important;
+      padding-#{$key}: $value !important;
     }
   }
 }

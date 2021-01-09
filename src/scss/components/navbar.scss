@@ -48,11 +48,11 @@ $navbarItemMr: map-get($navbar, item-margin);
     &:last-child {
       margin-right: unset;
     }
-    &[#{$put}parent] {
-      [#{$put}trigger] {
+    &.#{$put}parent {
+      .#{$put}trigger {
         cursor: pointer;
       }
-      [#{$put}child] {
+      .#{$put}sub {
         box-shadow: map-get($shadows, "sm");
         visibility: hidden;
         opacity: 0;

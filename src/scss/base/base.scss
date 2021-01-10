@@ -128,12 +128,18 @@ img {
 /* other */
 .#{$put}container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.1rem;
   padding-right: 1.1rem;
+  &\:full {
+    max-width: 100%;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
 }
+
 .relative {
   position: relative;
 }

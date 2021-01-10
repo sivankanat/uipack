@@ -1,0 +1,19 @@
+- let pageTitle = 'Home'
+doctype html
+html(lang="en")
+  head
+    include includes/head.pug
+  body
+    //Header
+    include includes/header.pug
+    //content
+    div(class='app-content' flex='fw:wrap')
+      //app sidebar
+      include includes/sidebar.pug
+      //app main
+      main(class='app-main expand')
+        .container
+          p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatem ea minus obcaecati ad non voluptate pariatur vel aperiam, illo repudiandae magnam culpa cumque laboriosam, rem et asperiores. Dicta, officiis?
+      //app main end
+
+  include includes/footer.pug

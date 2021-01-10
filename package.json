@@ -1,10 +1,11 @@
 {
   "name": "uipack",
-  "version": "0.11.2-dev.0",
+  "version": "0.14.0-dev.0",
   "description": "UIPack is a css framework",
-  "main": "dist/js/uipack.js",
+  "main": "",
   "scripts": {
     "test": "echo hi",
+    "start": "node build/server",
     "git:test": "git add . && git commit -m test && git push && git push --tags",
     "git": "git add . && git push && git push --tags",
     "v:major": "npm version major && npm run git",
@@ -20,12 +21,9 @@
     "js": "rollup --config ./conf/rollup.js",
     "b:js": "npm run js && terser dist/js/uipack.js -o dist/js/uipack.min.js -c -m",
     "w:js": "npm run js -- --watch",
-    "b:all": "npm run b:sass && npm run b:js",
-    "bs": "node conf/bs"
+    "b:all": "npm run b:sass && npm run b:js"
   },
-  "dependencies": {
-    "pug": "^3.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",
@@ -37,9 +35,11 @@
     "browser-sync": "^2.26.13",
     "browserlist": "^1.0.1",
     "cssnano": "^4.1.10",
+    "ejs": "^3.1.5",
     "node-sass": "^5.0.0",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
+    "pug": "^3.0.0",
     "rollup": "^2.36.1",
     "semver": "^7.3.4",
     "terser": "^5.5.1"
@@ -51,8 +51,7 @@
   ],
   "files": [
     "dist",
-    "src",
-    "conf"
+    "src"
   ],
   "repository": {
     "type": "git",

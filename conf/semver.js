@@ -1,2 +1,0 @@
-const semver = require('semver')
-

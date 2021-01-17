@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uipack css framework">
+    <link rel="stylesheet" href="../dist/css/uipack.css">
+    <link rel="stylesheet" href="css/app.css">
+    <title>UIPack:Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>UIPack:Form</h1>
+      <nav class="navbar mb:md"><a class="tag" href="index.html">index</a><a class="tag" href="test.html">test</a><a class="tag" href="card.html">card</a><a class="tag" href="navbar.html">navbar</a><a class="tag" href="grid.html">grid</a><a class="tag" href="form.html">form</a><a class="tag" href="tab.html">tab</a><a class="tag" href="separator.html">separator</a><a class="tag" href="text.html">text</a><a class="tag" href="width.html">width</a><a class="tag" href="heading.html">heading</a><a class="tag" href="widget.html">widget</a>
+      </nav>
+      <div class="container mt:8">
+        <div grid="cols:1 md@cols:2 gap:md">
+          <!--one-->
+          <div class="card"> 
+            <h3>Simple</h3>
+            <form class="form">
+              <div>
+                <label for="input">Input</label>
+                <input type="text" placeholder="Type text here..">
+              </div>
+              <div>
+                <label for="input">Input</label>
+                <input type="text" placeholder="Type text here..">
+              </div>
+              <div>
+                <label for="select"></label>
+                <select name="select">
+                  <option value="test">Option</option>
+                  <option value="test">Option</option>
+                </select>
+              </div>
+              <div>
+                <label for="">
+                  <input type="checkbox" name=""><span>checkbox</span>
+                </label>
+              </div>
+              <button>test</button>
+            </form>
+          </div>
+          <!-- two-->
+          <div>
+            <div class="card">
+              <h3>field:h</h3>
+              <form class="form">
+                <div class="field:h">
+                  <label for="input"><span>Input</span>
+                    <p class="helping">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                  </label>
+                  <div>
+                    <input class="wd:100" type="text" placeholder="Type text here..">
+                  </div>
+                </div>
+                <!--field g-->
+                <div class="field:g">
+                  <input type="text" placeholder="Type text here..">
+                  <input type="text" placeholder="Type text here..">
+                </div>
+                <div class="field:g">
+                  <div class="control">
+                    <label for="input_g">Input grid</label>
+                    <input type="text" name="input_g" placeholder="Type text here..">
+                  </div>
+                  <div class="control">
+                    <label for="input_g">Input grid</label>
+                    <input type="text" name="input_g" placeholder="Type text here..">
+                  </div>
+                </div>
+                <div class="field:h">
+                  <label for=""> <span>Label</span>
+                    <p class="helping">Lorem Ipsum</p>
+                  </label>
+                  <div>
+                    <input class="wd:100" type="text" placeholder="Type text here..">
+                  </div>
+                </div>
+                <div class="field:h">
+                  <label for="">Select</label>
+                  <div>
+                    <select>
+                      <option>option</option>
+                      <option>option</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field:h">
+                  <div></div>
+                  <label class="checkbox">
+                    <input type="checkbox"><span>Checkbox</span>
+                  </label>
+                </div>
+                <button class="btn:sm">Button</button>
+              </form>
+            </div>
+          </div>
+          <!-- three-->
+          <div>
+            <div class="card">
+              <h3>field:v</h3>
+              <form class="form">
+                <div class="field:v">
+                  <label for="input"><span>Input</span>
+                    <p class="helping">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                  </label>
+                  <div>
+                    <input class="wd:100" type="text" placeholder="Type text here..">
+                  </div>
+                </div>
+                <div class="field:v">
+                  <label for=""> <span>Label</span>
+                    <p class="helping">Lorem Ipsum</p>
+                  </label>
+                  <div>
+                    <input type="text" placeholder="Type text here..">
+                  </div>
+                </div>
+                <div class="field:v">
+                  <div>
+                    <input type="text" placeholder="Type text here..">
+                  </div>
+                </div>
+                <div class="field:v">
+                  <div>
+                    <select>
+                      <option>option</option>
+                      <option>option</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field:v">
+                  <div></div>
+                  <label class="checkbox">
+                    <input type="checkbox"><span>Checkbox</span>
+                  </label>
+                </div>
+                <button>Button</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../dist/js/uipack.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

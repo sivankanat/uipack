@@ -14,30 +14,30 @@ const
 bs.init({
   files: [
     "dist/css/uipack.css",
-    "docs/css/app.css"
+    "scenarios/css/app.css"
   ],
   port: 9000,
   server: {
     baseDir: './',
     directory: false
   },
-  startPath: 'docs',
+  startPath: 'scenarios',
   open: true
 })
 
 // pug
-bs.watch('scenarios/*.pug', function (event, file) {
+bs.watch('scenarios/pug/*.pug', function (event, file) {
   //events: unlink, add, change
   /* console.log(`Browsersync[event: ${event} file: ${file}]`); */
-  filename = file.replace('scenarios\\', '').replace('.pug', '').trim().toLowerCase();
+  filename = file.replace('scenarios\\pug\\', '').replace('.pug', '').trim().toLowerCase();
   if (!file.includes('includes')) {
     if (event == 'change') {
       setTimeout(() => {
-        pug.renderFile(`scenarios/${filename}.pug`, { pretty: true }, function (err, res) {
+        pug.renderFile(`scenarios/pug/${filename}.pug`, { pretty: true }, function (err, res) {
           if (err) console.log(err);
           else {
-            fs.writeFileSync(`docs/${filename}.html`, res, () => true)
-            console.log(`change: ${file} -> docs/${filename}.html`);
+            fs.writeFileSync(`scenarios/${filename}.html`, res, () => true)
+            console.log(`change: ${file} -> scenarios/${filename}.html`);
             setTimeout(() => bs.reload(), 5);
           }
         });
@@ -45,23 +45,23 @@ bs.watch('scenarios/*.pug', function (event, file) {
     }
 
     if (event == "unlink") {
-      fs.unlink(`docs/${filename}.html`, function (err) {
+      fs.unlink(`scenarios/${filename}.html`, function (err) {
         if (err) console.log(err);
-        else console.log(`unlink: ${file} -> docs/${filename}.html`);
+        else console.log(`unlink: ${file} -> scenarios/${filename}.html`);
       })
     }
   }
 })
 
 // watch sass
-bs.watch(["src/scss/**/*.scss", 'docs/css/**/*.scss'], function (event, file) {
+bs.watch(["src/scss/**/*.scss", 'scenarios/css/**/*.scss'], function (event, file) {
   if (event == "change") {
 
     let source = 'src/scss/uipack.scss';
     let out = 'dist/css/uipack.css'
-    if (file.includes('docs')) {
-      source = 'docs/css/app.scss';
-      out = 'docs/css/app.css';
+    if (file.includes('scenarios')) {
+      source = 'scenarios/css/app.scss';
+      out = 'scenarios/css/app.css';
     }
 
     setTimeout(() => {
@@ -109,11 +109,11 @@ bs.watch("src/js/**/*.js", async function (event, file) {
   }
 })
 
-// watch docs js
-bs.watch("docs/js/**/*.js", async function (event, file) {
+// watch scenarios js
+bs.watch("scenarios/js/**/*.js", async function (event, file) {
   if (event == 'change') {
     const bundle = await rollup.rollup({
-      input: 'docs/js/app.js',
+      input: 'scenarios/js/app.js',
       plugins: [
         babel({
           babelHelpers: "bundled"
@@ -122,9 +122,9 @@ bs.watch("docs/js/**/*.js", async function (event, file) {
       ]
     });
     await bundle.write({
-      file: 'docs/js/app.bundle.js',
+      file: 'scenarios/js/app.bundle.js',
       format: "cjs",
-      name: 'uipack'
+      name: 'app'
     });
     console.log(`changed ${file}`);
     await bs.reload();

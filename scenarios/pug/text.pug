@@ -1,33 +1,21 @@
-- var pageTitle = 'Text'
-doctype html
-html(lang="en")
-  head
-    include includes/head.pug
-  body
-    div.container
-      h1 UIPack:#{pageTitle}
-      include includes/nav.pug
+extends includes/layout.pug
+block Before
+  - let pageTitle = 'Test'
 
-      p(class="text" uip-text) Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      p(class="text:meta" uip-text) Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:meta]
-      p(class="text:uppercase" uip-text) Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:uppercase]
-      p(class="text:lowercase" uip-text) Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:lowercase]
-      p(class="text:capitalize" uip-text) Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:capitalize]
-      p(class="text:italic" uip-text) Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:italic]
+block Main
+  main(class='app-main expand')
+    .container
+      div(class='uipack-scenario' flex="")
+        p(class="text:meta") Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:meta]
 
-      h2(uip-heading="line")
-        span Sizes
-
-      p(class="text:sm") Lorem ipsum dolor sit, amet consectetur adipisicing elit. [text:sm]
-      p(class="text:md") Lorem ipsum dolor sit, amet consectetur adipisicing elit. [text:md]
-      p(class="text:lg") Lorem ipsum dolor sit, amet consectetur adipisicing elit. [text:lg]
-      p(class="text:xl") Lorem ipsum dolor sit, amet consectetur adipisicing elit. [text:xl]
-
-
-
-
-
-
-
-
-    include includes/footer.pug
+        p(class="text:meta") Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:meta]
+        p(class="text:uppercase") Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:uppercase]
+        p(class="text:lowercase") Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:lowercase]
+        p(class="text:capitalize") Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:capitalize]
+        p(class="text:italic") Lorem ipsum dolor sit, amet consectetur adipisicing elit.[text:italic]
+        h2(uip-heading="line")
+          span Sizes
+        p(class="text:sm") Lorem ipsum dolor sit, amet consectetur adipisicing elit. [text:sm]
+        p(class="text:md") Lorem ipsum dolor sit, amet consectetur adipisicing elit. [text:md]
+        p(class="text:lg") Lorem ipsum dolor sit, amet consectetur adipisicing elit. [text:lg]
+        p(class="text:xl") Lorem ipsum dolor sit, amet consectetur adipisicing elit. [text:xl]

@@ -15,7 +15,7 @@
   --color-danger: #dd3c57;
   --color-warning: #ffaa00;
   --color-info: teal;
-  --color-white: #fafaff;
+  --color-white: #ffffff;
   --linear: linear-gradient(0deg, #28B4D7, #28B4D7);
   --shadow-none: none;
   --shadow-remove: none;
@@ -176,12 +176,6 @@ ul.reset {
   list-style: none;
   margin: 0;
   padding: 0; }
-
-.tag {
-  background-color: #e3e5e8;
-  margin-right: 0.3rem;
-  padding: 0.1rem 0.5rem;
-  line-height: initial; }
 
 /* hide-show */
 .hide {
@@ -1702,13 +1696,13 @@ ul.list li {
   border-color: teal !important; }
 
 .bg\:white {
-  background-color: #fafaff !important; }
+  background-color: #ffffff !important; }
 
 .color\:white {
-  color: #fafaff !important; }
+  color: #ffffff !important; }
 
 .border\:white {
-  border-color: #fafaff !important; }
+  border-color: #ffffff !important; }
 
 .bg\:linear {
   background-image: -webkit-gradient(linear, left bottom, left top, from(#28B4D7), to(#28B4D7));
@@ -4799,7 +4793,7 @@ hr.separator\:circle:before {
 
 .border\:white,
 [border*="white"] {
-  border-color: #fafaff; }
+  border-color: #ffffff; }
 
 /* styles */
 .border\:solid,

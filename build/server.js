@@ -8,15 +8,18 @@ const
   rollup = require('rollup'),
   comonjs = require("@rollup/plugin-commonjs"),
   { babel } = require('@rollup/plugin-babel'),
+  { nodeResolve } = require('@rollup/plugin-node-resolve'),
   packageJson = require("../package.json")
   ;
 
 bs.init({
   files: [
     "dist/css/uipack.css",
-    "scenarios/css/app.css"
+    "scenarios/css/app.css",
+    "scenarios/js/app.bundle.js"
   ],
   port: 9000,
+  ui: false,
   server: {
     baseDir: './',
     directory: false
@@ -28,7 +31,6 @@ bs.init({
 // pug
 bs.watch('scenarios/pug/*.pug', function (event, file) {
   //events: unlink, add, change
-  /* console.log(`Browsersync[event: ${event} file: ${file}]`); */
   filename = file.replace('scenarios\\pug\\', '').replace('.pug', '').trim().toLowerCase();
   if (!file.includes('includes')) {
     if (event == 'change') {
@@ -84,49 +86,53 @@ bs.watch(["src/scss/**/*.scss", 'scenarios/css/**/*.scss'], function (event, fil
 });
 
 // watch js
-bs.watch("src/js/**/*.js", async function (event, file) {
+bs.watch("src/js/**/*.js", function (event, file) {
   if (event == 'change') {
-    const bundle = await rollup.rollup({
-      input: 'src/js/uipack.js',
-      plugins: [
-        babel({
-          babelHelpers: "runtime"
-        }),
-        comonjs()
-      ]
-    });
-    await bundle.write({
-      file: 'dist/js/uipack.js',
-      format: "umd",
-      amd: {
-        id: "UIPack"
-      },
-      banner: "/*! UIPack " + packageJson.version + " | https://github.com/sivankanat/uipack#readme | MIT */",
-      name: 'uipack'
-    });
-    console.log('change: uipack.js');
-    await bs.reload();
+    (async () => {
+      const bundle = await rollup.rollup({
+        input: 'src/js/uipack.js',
+        plugins: [
+          babel({
+            babelHelpers: "runtime"
+          }),
+          comonjs()
+        ]
+      });
+      await bundle.write({
+        file: 'dist/js/uipack.js',
+        format: "umd",
+        amd: {
+          id: "UIPack"
+        },
+        banner: "/*! UIPack " + packageJson.version + " | https://github.com/sivankanat/uipack#readme | MIT */",
+        name: 'uipack'
+      });
+    })
+    console.log('changed: uipack.js');
   }
+
 })
 
 // watch scenarios js
-bs.watch("scenarios/js/**/*.js", async function (event, file) {
+bs.watch("scenarios/js/app.js", function (event, file) {
   if (event == 'change') {
-    const bundle = await rollup.rollup({
-      input: 'scenarios/js/app.js',
-      plugins: [
-        babel({
-          babelHelpers: "bundled"
-        }),
-        comonjs()
-      ]
-    });
-    await bundle.write({
-      file: 'scenarios/js/app.bundle.js',
-      format: "cjs",
-      name: 'app'
-    });
+    (async () => {
+      const bundle = await rollup.rollup({
+        input: 'scenarios/js/app.js',
+        plugins: [
+          nodeResolve(),
+          babel({
+            babelHelpers: "bundled"
+          }),
+          comonjs()
+        ]
+      });
+      await bundle.write({
+        file: 'scenarios/js/app.bundle.js',
+        format: "cjs",
+        name: 'app'
+      });
+    })()
     console.log(`changed ${file}`);
-    await bs.reload();
   }
 })

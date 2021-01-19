@@ -9,7 +9,7 @@
     "git:test": "git add . && git commit -m test && git push && git push --tags",
     "git": "git add . && git push && git push --tags",
     "v:major": "npm version major && npm run git",
-    "v:minor": "npm version minor && npm run git",
+    "v:minor": "npm version minor && npm run git && npm publish",
     "v:patch": "npm version patch && npm run git",
     "v:dev": "npm version prerelease --preid=dev --no-git-tag",
     "v:preminor": "npm version preminor --preid=dev --no-git-tag",
@@ -23,7 +23,9 @@
     "w:js": "npm run js -- --watch",
     "b:all": "npm run b:sass && npm run b:js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "prismjs": "^1.23.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",
@@ -35,7 +37,6 @@
     "browser-sync": "^2.26.13",
     "browserlist": "^1.0.1",
     "cssnano": "^4.1.10",
-    "ejs": "^3.1.5",
     "node-sass": "^5.0.0",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",

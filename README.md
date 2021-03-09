@@ -41,7 +41,7 @@ or for advanced usage:
 ```
 
 ## Documentation
-https://sivankanat.github.io/uipack/scenarios/
+https://sivankanat.github.io/uipack/
 ```
 working on updates
 ```

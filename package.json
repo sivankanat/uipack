@@ -14,15 +14,7 @@
     "v:patch": "npm version patch && npm run git",
     "v:dev": "npm version prerelease --preid=dev --no-git-tag",
     "v:preminor": "npm version preminor --preid=dev --no-git-tag",
-    "v:prepatch": "npm version prepatch --preid=dev --no-git-tag",
-    "pcss@a": "postcss dist/css/uipack.css --no-map --use autoprefixer -d dist/css",
-    "sass": "node-sass -r src/scss/uipack.scss dist/css/uipack.css",
-    "b:sass": "npm run sass && npm run pcss@a && postcss dist/css/uipack.css --no-map --use cssnano -o dist/css/uipack.min.css",
-    "w:sass": "npm run sass && npm run sass -- -w",
-    "js": "rollup --config ./conf/rollup.js",
-    "b:js": "npm run js && terser dist/js/uipack.js -o dist/js/uipack.min.js -c -m",
-    "w:js": "npm run js -- --watch",
-    "b:all": "npm run b:sass && npm run b:js"
+    "v:prepatch": "npm version prepatch --preid=dev --no-git-tag"
   },
   "dependencies": {},
   "devDependencies": {

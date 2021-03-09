@@ -9,9 +9,9 @@
     "build": "node build/build",
     "git:test": "git add . && git commit -m test && git push && git push --tags",
     "git": "git add . && git push && git push --tags",
-    "v:major": "npm version major && npm run git",
+    "v:major": "npm version major && npm run git && npm publish",
     "v:minor": "npm version minor && npm run git && npm publish",
-    "v:patch": "npm version patch && npm run git",
+    "v:patch": "npm version patch && npm run git && npm publish",
     "v:dev": "npm version prerelease --preid=dev --no-git-tag",
     "v:preminor": "npm version preminor --preid=dev --no-git-tag",
     "v:prepatch": "npm version prepatch --preid=dev --no-git-tag"

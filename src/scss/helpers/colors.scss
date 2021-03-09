@@ -1,13 +1,4 @@
 /* colors */
-@for $i from 1 through 19 {
-  .#{$put}bg\:dark\:#{5 * $i} {
-    background-color: hsl(220deg, 6%, (5 * $i));
-  }
-  .#{$put}color\:dark\:#{5 * $i} {
-    color: hsl(220deg, 6%, (5 * $i));
-  }
-}
-
 @each $name, $val in $colors {
   .#{$put}bg\:#{$name} {
     background-color: #{$val} !important;
@@ -33,20 +24,5 @@
     background: linear-gradient(to right, white, white), #{$val};
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
-  }
-}
-
-// create  hsl(val, val, val)
-@each $name, $val in $color_codes {
-  @for $i from 1 through 19 {
-    .#{$put}bg\:#{$name}\:#{5*$i} {
-      background-color: hsl($val, 95%, (5 * $i));
-    }
-    .#{$put}color\:#{$name}\:#{5*$i} {
-      color: hsl($val, 95%, (5 * $i));
-    }
-    .#{$put}border\:#{$name}\:#{5*$i} {
-      border-color: hsl($val, 95%, (5 * $i)) !important;
-    }
   }
 }

@@ -1,11 +1,12 @@
 {
   "name": "uipack",
-  "version": "0.16.0",
+  "version": "0.19.0",
   "description": "UIPack is a css framework",
   "main": "",
   "scripts": {
     "test": "echo hi",
     "start": "node build/server",
+    "build": "node build/build",
     "git:test": "git add . && git commit -m test && git push && git push --tags",
     "git": "git add . && git push && git push --tags",
     "v:major": "npm version major && npm run git",
@@ -23,32 +24,32 @@
     "w:js": "npm run js -- --watch",
     "b:all": "npm run b:sass && npm run b:js"
   },
-  "dependencies": {
-    "prismjs": "^1.23.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@rollup/plugin-babel": "^5.2.2",
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-transform-runtime": "^7.13.9",
+    "@babel/preset-env": "^7.13.9",
+    "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
-    "autoprefixer": "^10.2.1",
-    "browser-sync": "^2.26.13",
+    "autoprefixer": "^10.2.5",
+    "browser-sync": "^2.26.14",
     "browserlist": "^1.0.1",
     "cssnano": "^4.1.10",
+    "ejs": "^3.1.6",
     "node-sass": "^5.0.0",
-    "postcss": "^8.2.4",
+    "postcss": "^8.2.7",
     "postcss-cli": "^8.3.1",
-    "pug": "^3.0.0",
-    "rollup": "^2.36.1",
+    "postcss-sort-media-queries": "^3.6.5",
+    "pug": "^3.0.2",
+    "rollup": "^2.40.0",
     "semver": "^7.3.4",
-    "terser": "^5.5.1"
+    "terser": "^5.6.0"
   },
   "browserslist": [
     "last 4 version",
     "> 1%",
-    "IE 9"
+    "IE 10"
   ],
   "files": [
     "dist",
@@ -65,7 +66,7 @@
     "css-framework",
     "ui-framework"
   ],
-  "author": "Şivan Kanat <sivankanat@gmail.com>",
+  "author": "Sivan Kanat <sivankanat@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sivankanat/uipack/issues"

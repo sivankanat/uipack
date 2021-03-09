@@ -1,14 +1,7 @@
 /* base */
 *,
-:after,
-:before {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: sans-serif;
-  line-height: 1.15;
-  text-size-adjust: 100%;
+::after,
+::before {
   box-sizing: border-box;
 }
 
@@ -17,16 +10,16 @@ body {
   overflow-x: hidden;
   font-family: map-get($theme, "font");
   font-size: map-get($theme, "font-size");
+  color: var(--color-font);
   line-height: map-get($theme, "line-height");
-  color: map-get($theme, "font-color");
+  text-size-adjust: 100%;
+  font-display: swap;
 }
 
 /* link */
-a,
-a:link,
-a:active {
+a {
   text-decoration: none;
-  color: map-get($theme, "link-color");
+  color: var(--color-link);
 }
 .pointer {
   cursor: pointer;
@@ -128,7 +121,7 @@ img {
 /* other */
 .#{$put}container {
   width: 100%;
-  max-width: 1300px;
+  max-width: $container_max;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.1rem;

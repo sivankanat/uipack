@@ -1,7 +1,10 @@
+const _log = (data) => console.log(data);
+
 const
   fs = require('fs'),
   bs = require('browser-sync').create('UIPack'),
   pug = require('pug'),
+  ejs = require('ejs'),
   sass = require('node-sass'),
   postcss = require('postcss'),
   autoprefixer = require('autoprefixer'),
@@ -15,31 +18,32 @@ const
 bs.init({
   files: [
     "dist/css/uipack.css",
-    "scenarios/css/app.css",
-    "scenarios/js/app.bundle.js"
+    "docs/css/docs.css",
+    "docs/js/docs.js",
+    "**/*.html"
   ],
   port: 9000,
   ui: false,
   server: {
-    baseDir: './',
+    baseDir: '.',
     directory: false
   },
-  startPath: 'scenarios',
-  open: true
+  startPath: 'docs',
+  open: false
 })
 
 // pug
-bs.watch('scenarios/pug/*.pug', function (event, file) {
+/* bs.watch('docs/pug/*.pug', function (event, file) {
   //events: unlink, add, change
-  filename = file.replace('scenarios\\pug\\', '').replace('.pug', '').trim().toLowerCase();
+  filename = file.replace('docs\\pug\\', '').replace('.pug', '').trim().toLowerCase();
   if (!file.includes('includes')) {
     if (event == 'change') {
       setTimeout(() => {
-        pug.renderFile(`scenarios/pug/${filename}.pug`, { pretty: true }, function (err, res) {
+        pug.renderFile(`docs/pug/${filename}.pug`, { pretty: true }, function (err, res) {
           if (err) console.log(err);
           else {
-            fs.writeFileSync(`scenarios/${filename}.html`, res, () => true)
-            console.log(`change: ${file} -> scenarios/${filename}.html`);
+            fs.writeFileSync(`docs/${filename}.html`, res, () => true)
+            console.log(`change: ${file} -> docs/${filename}.html`);
             setTimeout(() => bs.reload(), 5);
           }
         });
@@ -47,43 +51,68 @@ bs.watch('scenarios/pug/*.pug', function (event, file) {
     }
 
     if (event == "unlink") {
-      fs.unlink(`scenarios/${filename}.html`, function (err) {
+      fs.unlink(`docs/${filename}.html`, function (err) {
         if (err) console.log(err);
-        else console.log(`unlink: ${file} -> scenarios/${filename}.html`);
+        else console.log(`unlink: ${file} -> docs/${filename}.html`);
       })
     }
   }
+}) */
+
+// ejs
+bs.watch('docs/ejs/pages/*.ejs', function (event, file) {
+  //events: unlink, add, change
+  filename = file.replace('docs\\ejs\\pages\\', '').replace('.ejs', '').trim().toLowerCase();
+
+  if (event == 'change') {
+    setTimeout(() => {
+      ejs.renderFile(`docs/ejs/pages/${filename}.ejs`, {}, function (err, str) {
+        // str => Rendered HTML string
+        err ? _log(err) : fs.writeFileSync(`docs/${filename}.html`, str, () => true);
+        _log(`${filename} changed`)
+      });
+
+    }, 70);
+  }
+
+  if (event == "unlink") {
+    fs.unlink(`docs/${filename}.html`, function (err) {
+      err ? _log(err) : _log(`unlink: ${file} -> docs/${filename}.html`);
+    })
+  }
+
 })
 
 // watch sass
-bs.watch(["src/scss/**/*.scss", 'scenarios/css/**/*.scss'], function (event, file) {
+bs.watch("src/scss/**/*.scss", function (event, file) {
   if (event == "change") {
-
     let source = 'src/scss/uipack.scss';
-    let out = 'dist/css/uipack.css'
-    if (file.includes('scenarios')) {
-      source = 'scenarios/css/app.scss';
-      out = 'scenarios/css/app.css';
-    }
-
-    setTimeout(() => {
-      sass.render({
-        file: source,
-        sourceMap: false
-      }, function (err, res) {
-        if (err) console.log(err);
-        else {
-          postcss([autoprefixer]).process(res.css, { from: 'undefined' }).then(result => {
-            fs.writeFile(out, result, function (err) {
-              if (err) console.log(err);
-              else console.log(`sass: ${file}`);
-            })
-          })
-        }
-      })
-    }, 200)
+    let out = 'dist/css/uipack.css';
+    renderScss(source, out);
+    renderScss('docs/css/docs.scss', 'docs/css/docs.css');
   }
 });
+
+bs.watch('docs/css/**/*.scss', function (event, file) {
+  if (event == "change") {
+    let source = 'docs/css/docs.scss';
+    let out = 'docs/css/docs.css';
+    renderScss(source, out);
+  }
+});
+
+let renderScss = function (source, out) {
+  setTimeout(() => {
+    sass.render({
+      file: source,
+      outFile: out,
+      sourceMap: true
+    }, (err, res) => err ? _log(err) : pcss(res));
+  }, 100)
+  let pcss = result => {
+    postcss([autoprefixer]).process(result.css, { from: source, to: out }).then(result => fs.writeFile(out, result.css, (err) => err ? _log(err) : _log(`${source} => ${out}`)))
+  }
+}
 
 // watch js
 bs.watch("src/js/**/*.js", function (event, file) {
@@ -92,10 +121,11 @@ bs.watch("src/js/**/*.js", function (event, file) {
       const bundle = await rollup.rollup({
         input: 'src/js/uipack.js',
         plugins: [
+          nodeResolve(),
+          comonjs(),
           babel({
-            babelHelpers: "runtime"
+            babelHelpers: 'bundled'
           }),
-          comonjs()
         ]
       });
       await bundle.write({
@@ -104,21 +134,20 @@ bs.watch("src/js/**/*.js", function (event, file) {
         amd: {
           id: "UIPack"
         },
-        banner: "/*! UIPack " + packageJson.version + " | https://github.com/sivankanat/uipack#readme | MIT */",
-        name: 'uipack'
+        name: 'UIPack'
       });
-    })
-    console.log('changed: uipack.js');
+      await bundle.close();
+      console.log(`${file} changed`);
+    })()
   }
-
 })
 
-// watch scenarios js
-bs.watch("scenarios/js/app.js", function (event, file) {
-  if (event == 'change') {
+// watch docs js
+bs.watch("docs/js/src/**/*.js", function (event, file) {
+  if (event === 'change') {
     (async () => {
       const bundle = await rollup.rollup({
-        input: 'scenarios/js/app.js',
+        input: 'docs/js/src/docs.js',
         plugins: [
           nodeResolve(),
           babel({
@@ -128,11 +157,11 @@ bs.watch("scenarios/js/app.js", function (event, file) {
         ]
       });
       await bundle.write({
-        file: 'scenarios/js/app.bundle.js',
-        format: "cjs",
-        name: 'app'
+        file: 'docs/js/docs.js',
+        format: "cjs"
       });
+      await bundle.close();
+      console.log(`${file} changed`);
     })()
-    console.log(`changed ${file}`);
   }
 })

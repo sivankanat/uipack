@@ -1,4 +1,4 @@
-/*! UIPack 0.11.2-dev.0 | https://github.com/sivankanat/uipack#readme | MIT */
+/*! UIPack 0.20.0 | https://github.com/sivankanat/uipack#readme | MIT */
 (function (factory) {
   typeof define === 'function' && define.amd ? define('UIPack', factory) :
   factory();
@@ -58,7 +58,7 @@
     clck_fn: function clck_fn() {
       this.config.parent.trigger.on('click', function (e) {
         e.preventDefault();
-        var nm = UIP_Navbar.config.name;
+        UIP_Navbar.config.name;
         this.closest('.parent').querySelector('.sub').classList.toggle('active');
       });
     },

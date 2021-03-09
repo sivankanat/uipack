@@ -1,0 +1,139 @@
+// !important
+// usage via tag e.g uipack-wd:3/12
+$put: "";
+
+// theme
+$theme: (
+  font: (
+    "Catamaran",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif,
+  ),
+  font-color: #221f25,
+  font-size: 12pt,
+  line-height: 1,
+  link-color: inherit,
+  bg-muted: hsl(220deg, 8%, 95%),
+  bg-muted-2: hsl(220deg, 8%, 90%),
+  border-color: #eee,
+);
+
+// navbar
+$navbar: (
+  item-margin: 1rem,
+);
+
+//colors
+$colors: (
+  "primary": hsl(225deg, 100%, 50%),
+  "secondary": hsl(225deg, 10%, 55%),
+  "success": hsl(135deg, 85%, 40%),
+  "danger": hsl(350deg, 70%, 55%),
+  "warning": hsl(40deg, 100%, 50%),
+  "info": hsl(180deg, 100%, 25%),
+  "white": #ffffff,
+);
+
+//linears
+$linears: (
+  "linear": "linear-gradient(0deg, #28B4D7, #28B4D7)",
+);
+// screen sizes
+$container_max: 1280px;
+$screen_sizes: (
+  xs: 414px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+// width sizes
+$box_sizes: (
+  xs: 2rem,
+  sm: 3rem,
+  md: 4rem,
+  lg: 6rem,
+  xl: 8rem,
+);
+
+// spacing
+$spaces: (
+  "remove": 0,
+  "xs": 0.25rem,
+  "sm": 0.75rem,
+  "md": 1.1rem,
+  "lg": 2rem,
+  "xl": 3rem,
+);
+
+//heading sizes
+$heading_sizes: (
+  "sm": 125%,
+  "md": 150%,
+  "lg": 200%,
+  "xl": 250%,
+);
+//text sizes
+$text_sizes: (
+  "sm": 93%,
+  "md": 125%,
+  "lg": 150%,
+  "xl": 175%,
+);
+
+// shadow
+$shadows: (
+  none: "none",
+  remove: "none",
+  sm: 0px 2px 6px rgba(0, 0, 0, 0.1),
+  md: 0px 4px 12px rgba(0, 0, 0, 0.09),
+  lg: 0px 8px 24px rgba(0, 0, 0, 0.09),
+);
+
+// borders
+$border_radius: (
+  "round": 2px,
+  "pill": 700px,
+  "circle": 50%,
+  "20": 20px,
+);
+
+$border_shapes: (
+  none: (
+    "border": none,
+  ),
+  default: (
+    "border": 1px solid map-get($theme, "border-color"),
+    "border-radius": 2px,
+  ),
+);
+
+$selection: (
+  "background": #221f25,
+  "color": white,
+);
+
+/* css variables */
+:root {
+  @each $key, $val in $theme {
+    --#{$key}: #{$val};
+  }
+  @each $key, $val in $colors {
+    --color-#{$key}: #{$val};
+  }
+  @each $key, $val in $linears {
+    --#{$key}: #{$val};
+  }
+  @each $key, $val in $shadows {
+    --shadow-#{$key}: #{$val};
+  }
+}

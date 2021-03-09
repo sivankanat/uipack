@@ -1,0 +1,58 @@
+<%- include('../parts/header', {title: 'Navbar' , desc:'UIPack navbar component'}) %>
+
+  <!--main-->
+  <main class="docs-main">
+    <div class="docs-main--inner">
+      <article class="docs-article">
+
+        <section class="docs-section" id="overview">
+          <h2><a href="#overview">#</a>Navbar</h2>
+          <p>Navbar usage</p>
+
+          <strong>Childs</strong>
+          <ul>
+            <li>navbar-brand</li>
+            <li>navbar-item</li>
+            <li>navbar-menu</li>
+          </ul>
+
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <nav class="navbar bg:muted pd:md">
+              <div class="navbar-item">
+                <a href="#" class="navbar-brand">Brand</a>
+              </div>
+              <div class="navbar-item">
+                <a href="#">Navbar Item</a>
+              </div>
+              <a href="#" class="navbar-item">Navbar Item</a>
+            </nav>
+          </div>
+        </section>
+
+        <!-- Navbar Menu -->
+        <section class="docs-section" id="NavbarMenu">
+          <h2><a href="#NavbarMenu">#</a>Navbar Menu</h2>
+          <p>Navbar with menu item</p>
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <nav class="navbar bg:muted pd:md">
+              <div class="navbar-item">
+                <a href="#" class="navbar-brand">Brand</a>
+              </div>
+              <div class="navbar-item ml:a">
+                <ul class="navbar-menu">
+                  <li><a href="#">Menu Item</a></li>
+                  <li><a href="#">Menu Item</a></li>
+                  <li><a href="#">Menu Item</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+  </main>
+  <!-- main end -->
+
+  <%- include('../parts/footer') %>

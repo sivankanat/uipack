@@ -11,7 +11,6 @@ npm i uipack
 ```
 
 ## Usage 
-There are many ways to use the UIPack.
 
 Recommended installation:
 ### node-sass

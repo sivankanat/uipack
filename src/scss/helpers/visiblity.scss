@@ -1,0 +1,21 @@
+/**
+* UIPack visibility
+* 
+*/
+.#{$put}hidden {
+  display: none !important;
+}
+.#{$put}visible {
+  display: block !important;
+}
+
+@each $name, $size in $screen_sizes {
+  @media screen and(min-width: $size) {
+    .#{$name}\@hidden {
+      display: none !important;
+    }
+    .#{$name}\@visible {
+      display: block !important;
+    }
+  }
+}

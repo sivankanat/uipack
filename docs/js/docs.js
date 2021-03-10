@@ -1,5 +1,31 @@
 'use strict';
 
+((function UIPack() {
+  if (!(this instanceof UIPack)) return new UIPack();
+
+  window.onload = function () {
+    /* navbar */
+    if (document.querySelector('.navbar .navbar-bars')) {
+      document.querySelectorAll('.navbar .navbar-bars').forEach(function (bars) {
+        bars.addEventListener('click', function (e) {
+          e.preventDefault();
+          var target = document.querySelector(".".concat(this.dataset.target));
+
+          if (target.classList.contains('visible')) {
+            target.classList.remove('visible');
+            target.classList.add('hidden');
+          } else if (target.classList.contains('hidden')) {
+            target.classList.remove('hidden');
+            target.classList.add('visible');
+          } else {
+            target.classList.add('visible');
+          }
+        });
+      });
+    }
+  };
+}))();
+
 function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
@@ -63,8 +89,7 @@ var pages = {
   },
   docs: {
     Starter: "starter.html",
-    Navbar: "navbar.html",
-    Test: "test.html"
+    Navbar: "navbar.html"
   }
 };
 var overEl = document.querySelector('.sidebar-nav li.overview ul.child');

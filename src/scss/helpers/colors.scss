@@ -1,4 +1,8 @@
-/* colors */
+/**
+* UIPack colors
+* 
+*/
+
 @each $name, $val in $colors {
   .#{$put}bg\:#{$name} {
     background-color: #{$val} !important;

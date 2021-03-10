@@ -1,43 +1,126 @@
-/* components/navbar */
+/**
+* UIPack Navbar
+* 
+*/
 $navbarItemMr: map-get($navbar, item-margin);
 .#{$put}navbar {
   display: flex;
+
   a {
-    @include transition;
-  }
-  a:hover {
-    @include link-hover();
+    transition: opacity 0.3s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
-  .#{$put}navbar-item {
+  > * {
     display: flex;
     align-items: center;
     margin-right: $navbarItemMr;
     &:last-child {
-      margin-right: unset;
+      margin-right: 0;
+    }
+  }
+  .navbar-brand {
+    font-weight: 600;
+    font-size: 115%;
+  }
+
+  /* navbar-down */
+  .navbar-down {
+    position: relative;
+    &:hover {
+      .down {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+    .down {
+      position: absolute;
+      top: 20px;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity, transform 0.2s, 0.2s;
+      .down-inner {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        box-shadow: 0 2px 6px #0000001f;
+        padding: 14px 16px;
+        background: white;
+        margin-top: 10px;
+      }
     }
   }
 
-  .#{$put}navbar-brand {
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    font-size: 115%;
-    line-height: 1;
+  /* navbar-bars */
+  .navbar-bars {
+    display: flex;
   }
 
-  .#{$put}navbar-menu {
-    display: flex;
+  /* navbar-menu */
+  .navbar-menu {
+    display: flex !important;
     list-style: none;
     padding: 0;
-    margin: 0;
+    @media (max-width: map-get($screen_sizes, "md")) {
+      display: inherit !important;
+      visibility: hidden;
+      transform: translateY(36px);
+      position: absolute;
+      top: 0px;
+      background: white;
+      padding: 15px;
+      flex-direction: column;
+      width: max-content;
+      right: -50%;
+      opacity: 0;
+      transition: opacity, transform 0.2s, 0.2s;
+      &.visible {
+        opacity: 1;
+        transform: translateY(30px);
+        visibility: visible;
+        box-shadow: 0 2px 6px #0000001f;
+        padding: 14px 16px;
+      }
+    }
     > li {
       margin-right: $navbarItemMr;
+
       &:last-child {
-        margin-right: unset;
+        margin-right: 0;
+      }
+
+      &.parent {
+        position: relative;
+        .sub {
+          list-style: none;
+          position: absolute;
+          left: -50%;
+          right: -50%;
+          visibility: hidden;
+          visibility: hidden;
+          opacity: 0;
+          transform: translateY(6px);
+          transition: opacity, transform 0.2s, 0.2s;
+        }
+        &:hover .sub {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0px);
+        }
+        .sub-inner {
+          margin: 0 auto;
+          width: max-content;
+          background-color: white;
+          list-style: none;
+          margin-top: 5px;
+          padding: 14px 16px;
+          box-shadow: 0 2px 6px #0000001f;
+        }
       }
     }
   }
 }
-

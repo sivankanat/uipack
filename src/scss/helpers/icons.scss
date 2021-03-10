@@ -3,10 +3,24 @@
 * 
 */
 
+.#{$put}icon-btn {
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color;
+  font-size: 20px;
+}
+
 .icon-duo {
   display: flex;
   align-items: center;
-  .last {
-    margin-left: 4px;
+  > :first-child {
+    margin-right: 2px;
   }
 }

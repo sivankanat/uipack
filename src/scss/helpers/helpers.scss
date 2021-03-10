@@ -1,3 +1,7 @@
+.relative {
+  position: relative;
+}
+
 
 /* box sizing */
 @each $key, $val in $box_sizes {

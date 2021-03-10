@@ -2,7 +2,7 @@
   "name": "uipack",
   "version": "0.20.0",
   "description": "UIPack is a css framework",
-  "main": "",
+  "main": "src/js/uipack.js",
   "scripts": {
     "test": "echo hi",
     "start": "node build/server",

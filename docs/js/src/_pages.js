@@ -6,7 +6,6 @@ const pages = {
   docs: {
     Starter: "starter.html",
     Navbar: "navbar.html",
-    Test: "test.html"
   }
 }
 

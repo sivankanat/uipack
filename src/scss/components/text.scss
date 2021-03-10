@@ -1,7 +1,8 @@
 /**
-* UIPack text styles
-*
+* UIPack text
+* 
 */
+
 .#{$put}text {
   //sizes
   @each $key, $val in $text_sizes {
@@ -12,10 +13,10 @@
   &\:meta {
     color: map-get($colors, "secondary");
   }
-  &\:uppercase {
+  &\:upper {
     text-transform: uppercase;
   }
-  &\:lowercase {
+  &\:lower {
     text-transform: lowercase;
   }
   &\:capitalize {
@@ -38,6 +39,9 @@
   }
   &\:lth {
     text-decoration: line-through;
+  }
+  &\:under {
+    text-decoration: underline;
   }
 }
 

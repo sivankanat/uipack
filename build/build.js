@@ -1,6 +1,6 @@
 const _log = (data) => console.log(data);
 const packageJson = require('../package.json');
-const ver = "0.20.0";
+const ver = "0.20.2";
 const banner = "/*! UIPack " + ver + " | https://github.com/sivankanat/uipack#readme | MIT */";
 
 const

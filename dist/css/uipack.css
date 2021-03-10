@@ -6,7 +6,7 @@
   --line-height: 1.5;
   --color-font: #221f25;
   --color-link: inherit;
-  --color-theme: orange;
+  --color-theme: #c3c6ca;
   --color-border: #eee;
   --color-muted: #eee;
   --color-primary: #0040ff;
@@ -217,13 +217,13 @@ ul.reset {
   border-color: inherit !important; }
 
 .bg\:theme {
-  background-color: orange !important; }
+  background-color: #c3c6ca !important; }
 
 .color\:theme {
-  color: orange !important; }
+  color: #c3c6ca !important; }
 
 .border\:theme {
-  border-color: orange !important; }
+  border-color: #c3c6ca !important; }
 
 .bg\:border {
   background-color: #eee !important; }
@@ -640,6 +640,37 @@ ul.reset {
 .shadow\:lg {
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.09); }
 
+/**
+* UIPack Borders
+* 
+*/
+/* custom borders */
+.border\:rem {
+  border: none; }
+
+.border\:default {
+  border: 1px solid var(--color-border);
+  border-radius: 2px; }
+
+.border\:bottom {
+  border-bottom: 1px solid var(--color-border); }
+
+.border\:top {
+  border-top: 1px solid var(--color-border); }
+
+/* border radius */
+.border\:round {
+  border-radius: 2px; }
+
+.border\:pill {
+  border-radius: 700px; }
+
+.border\:circle {
+  border-radius: 50%; }
+
+.border\:20 {
+  border-radius: 20px; }
+
 /** 
 * UIPack Icons
 * 
@@ -944,21 +975,35 @@ ul.reset {
 */
 .card {
   position: relative; }
-  .card-default {
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); }
-  .card .card-body,
-  .card .card-header,
-  .card .card-footer,
   .card .card-title {
-    padding: 1.1rem; }
-  .card .card-footer .card-title,
-  .card .card-header .card-title,
-  .card .card-body .card-title {
-    padding: 0; }
-  .card .card-header {
-    border-bottom: 1px solid; }
-  .card .card-footer {
-    border-top: 1px solid; }
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0; }
+
+/**
+* UIPack Table
+* 
+*/
+table {
+  border-collapse: collapse; }
+
+.table {
+  border-collapse: collapse;
+  /* boxed */
+  /* listed */ }
+  .table-boxed {
+    border: 1px solid var(--color-border); }
+    .table-boxed td,
+    .table-boxed th {
+      border: 1px solid var(--color-border);
+      padding: 6px 12px; }
+  .table-listed thead tr {
+    border-width: 2px; }
+  .table-listed tr {
+    border-bottom: 1px solid var(--color-border); }
+  .table-listed td,
+  .table-listed th {
+    padding: 6px 12px; }
 
 /**
 * UIPack forms
@@ -975,6 +1020,7 @@ select {
   font-family: inherit;
   font-size: inherit;
   border: 1px solid;
+  border-color: var(--color-border);
   border-radius: 1px; }
   input:not([type="checkbox"]):not([type="radio"]):focus,
   button:focus,
@@ -1322,8 +1368,8 @@ form.form {
   align-content: stretch; }
 
 /* other */
-.basis\:a,
-.basis\:auto {
+.flex\:a,
+.flex\:auto {
   flex: 0 0 auto; }
 
 /**

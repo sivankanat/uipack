@@ -1,0 +1,81 @@
+<%- include('../parts/header', {title: 'Table' , desc:'UIPack Table Component'}) %>
+
+  <!--main-->
+  <main class="docs-main">
+    <div class="docs-main--inner">
+      <p class="text:meta text:sm text:under mb:md"><a
+          href="https://github.com/sivankanat/uipack/blob/main/docs/ejs/pages/table.ejs" target="_blank"
+          rel="noopener noreferrer">Edit on github</a>
+      </p>
+
+      <article class="docs-article">
+
+        <section class="docs-section" id="overview">
+          <h2><a href="#overview">#</a>Table Boxed</h2>
+          <p>Table usage</p>
+
+          <pre
+            class="mb:md language-markup pd:xs wd:max shadow:sm"><code><xmp><table class="table-boxed">...</table></xmp></code></pre>
+
+          <h3>Example: </h3>
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <table class="table table-boxed wd:100">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Surname</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John</td>
+                  <td>Doe</td>
+                  <td>jd@mail.com</td>
+                </tr>
+                <tr>
+                  <td>John</td>
+                  <td>Doe</td>
+                  <td>jd@mail.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="docs-section" id="TableListed">
+          <h2><a href="#TableListed">#</a>Table Listed</h2>
+          <pre
+            class="mb:md language-markup pd:xs wd:max shadow:sm"><code><xmp><table class="table-listed">...</table></xmp></code></pre>
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <table class="table table-listed wd:100">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Surname</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John</td>
+                  <td>Doe</td>
+                  <td>jd@mail.com</td>
+                </tr>
+                <tr>
+                  <td>John</td>
+                  <td>Doe</td>
+                  <td>jd@mail.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+  </main>
+  <!-- main end -->
+
+  <%- include('../parts/footer') %>

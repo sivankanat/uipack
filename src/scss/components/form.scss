@@ -14,7 +14,7 @@ select {
   font-family: inherit;
   font-size: inherit;
   border: 1px solid;
-  border-color: map-get($theme, border-color);
+  border-color: var(--color-border);
   border-radius: 1px;
   &:focus {
     outline: none;
@@ -116,4 +116,3 @@ form.#{$put}form {
     }
   }
 }
-

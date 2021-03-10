@@ -1,0 +1,71 @@
+<%- include('../parts/header', {title: 'Card' , desc:'UIPack card component'}) %>
+
+  <!--main-->
+  <main class="docs-main">
+    <div class="docs-main--inner">
+      <p class="text:meta text:sm text:under mb:md"><a
+          href="https://github.com/sivankanat/uipack/blob/main/docs/ejs/pages/card.ejs" target="_blank"
+          rel="noopener noreferrer">Edit on github</a>
+      </p>
+
+      <article class="docs-article">
+
+        <section class="docs-section" id="overview">
+          <h2><a href="#overview">#</a>Card</h2>
+          <p>card test</p>
+
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <div class="grid" grid="cols:1 md@cols:2">
+              <div class="card border:default pd:md">
+                <h3 class="card-title mb:sm">Card Basic</h3>
+                <p class="reset card-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <div class="card-footer mt:sm">
+                  <button class="btn:sm">Card btn</button>
+                </div>
+              </div>
+              <div class="card shadow:sm pd:md">
+                <h3 class="card-title mb:sm">Card Shadow</h3>
+                <p class="reset card-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <div class="card-footer mt:sm">
+                  <button class="btn:sm">Card btn</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="cardOther">
+          <h2><a href="#overview">#</a>Card 2</h2>
+          <p>Card other usage</p>
+
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <!-- card -->
+            <div class="card border:default wd:5/12">
+              <!-- card header -->
+              <div class="card-header pd:md mt:sm border:bottom">
+                <h2 class="card-title">Card Title</h2>
+              </div>
+              <!-- card body -->
+              <div class="card-body pd:md">
+                <p class="reset">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam non atque harum
+                  temporibus
+                  labore ex eveniet hic, ab quisquam repudiandae sunt quaerat sed quas tempora corporis voluptatibus
+                  impedit ipsam eligendi.</p>
+              </div>
+              <!-- card footer -->
+              <div class="card-footer pd:md mt:ms border:top">
+                <button class="btn:sm">Card btn</button>
+              </div>
+
+            </div>
+
+
+          </div>
+        </section>
+
+      </article>
+    </div>
+  </main>
+  <!-- main end -->
+
+  <%- include('../parts/footer') %>

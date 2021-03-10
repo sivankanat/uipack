@@ -2,7 +2,6 @@
 * UIPack flex
 * 
 */
-
 /* flex gap */
 @each $name, $size in $spaces {
   [#{$put}flex~="gap:#{$name}"] {
@@ -54,7 +53,7 @@
 }
 
 /* other */
-.basis\:a,
-.basis\:auto {
+.flex\:a,
+.flex\:auto {
   flex: 0 0 auto;
 }

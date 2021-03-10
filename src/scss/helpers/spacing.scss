@@ -77,7 +77,7 @@ $paddings: (
   }
 }
 
-@each $screen, $size in $screen_sizes {
+@each $screen, $size in $screens {
   @media screen and(min-width: $size) {
     @each $name, $value in $spaces {
       .#{$screen}\@#{$put}px\:#{$name} {

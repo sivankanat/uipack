@@ -1,0 +1,70 @@
+<%- include('../parts/header', {title: 'Flex' , desc:'UIPack Flex Component'}) %>
+
+  <!--main-->
+  <main class="docs-main">
+    <div class="docs-main--inner">
+      <p class="text:meta text:sm text:under mb:md"><a
+          href="https://github.com/sivankanat/uipack/blob/main/docs/ejs/pages/flex.ejs" target="_blank"
+          rel="noopener noreferrer">Edit on github</a>
+      </p>
+
+      <article class="docs-article">
+
+        <section class="docs-section" id="overview">
+          <h2><a href="#overview">#</a>Flex</h2>
+          <p>Flex usage</p>
+
+          <pre class="lang-markup mb:md shadow:sm wd:max pd:xs"><code>
+            <xmp><div class=".." flex="..">..</div></xmp>
+          </code></pre>
+
+          <!-- table -->
+          <table class="table-boxed mb:md">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class=""><code>ai:center</code></td>
+                <td class="text:meta">vertical centering</td>
+              </tr>
+              <tr>
+                <td class=""><code>jc:center</code></td>
+                <td class="text:meta">horizontal centering</td>
+              </tr>
+              <tr>
+                <td class=""><code>fw:wrap</code></td>
+                <td class="text:meta">flex wrap (nowrap, reserve)</td>
+              </tr>
+              <tr>
+                <td class=""><code>fd:col</code></td>
+                <td class="text:meta">flex direction (col or row)</td>
+              </tr>
+              <tr>
+                <td class=""><code>gap:md</code></td>
+                <td class="text:meta">flex gap (sm, md, lg or xl)</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <!-- example -->
+          <p>Here is an example for use the flex on an element:</p>
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <div class="card border:default pd:md wd:4/12" flex="ai:center jc:center fd:col">
+              <h3 class="card-title">Flex title</h3>
+              <span>Lorem ipsum dolor sit amet.</span>
+            </div>
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+  </main>
+  <!-- main end -->
+
+  <%- include('../parts/footer') %>

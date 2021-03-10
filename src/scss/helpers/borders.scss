@@ -1,0 +1,20 @@
+/**
+* UIPack Borders
+* 
+*/
+
+/* custom borders */
+@each $name, $vals in $borders {
+  .#{$put}border\:#{$name} {
+    @each $key, $val in $vals {
+      #{$key}: #{$val};
+    }
+  }
+}
+
+/* border radius */
+@each $key, $val in $border_shapes {
+  .#{$put}border\:#{$key} {
+    border-radius: $val;
+  }
+}

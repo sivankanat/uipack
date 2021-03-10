@@ -4,12 +4,12 @@
 <head>
 
   <head>
-    <title>UIPack:Starter
+    <title>UIPack:Flex
     </title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="UIPack starter">
+    <meta name="description" content="UIPack Flex Component">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
       rel="stylesheet">
@@ -91,18 +91,60 @@
   <main class="docs-main">
     <div class="docs-main--inner">
       <p class="text:meta text:sm text:under mb:md"><a
-          href="https://github.com/sivankanat/uipack/blob/main/docs/ejs/pages/starter.ejs" target="_blank"
+          href="https://github.com/sivankanat/uipack/blob/main/docs/ejs/pages/flex.ejs" target="_blank"
           rel="noopener noreferrer">Edit on github</a>
       </p>
 
       <article class="docs-article">
 
         <section class="docs-section" id="overview">
-          <h2><a href="#overview">#</a>Starter</h2>
-          <p>Starter page</p>
+          <h2><a href="#overview">#</a>Flex</h2>
+          <p>Flex usage</p>
 
+          <pre class="lang-markup mb:md shadow:sm wd:max pd:xs"><code>
+            <xmp><div class=".." flex="..">..</div></xmp>
+          </code></pre>
+
+          <!-- table -->
+          <table class="table-boxed mb:md">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class=""><code>ai:center</code></td>
+                <td class="text:meta">vertical centering</td>
+              </tr>
+              <tr>
+                <td class=""><code>jc:center</code></td>
+                <td class="text:meta">horizontal centering</td>
+              </tr>
+              <tr>
+                <td class=""><code>fw:wrap</code></td>
+                <td class="text:meta">flex wrap (nowrap, reserve)</td>
+              </tr>
+              <tr>
+                <td class=""><code>fd:col</code></td>
+                <td class="text:meta">flex direction (col or row)</td>
+              </tr>
+              <tr>
+                <td class=""><code>gap:md</code></td>
+                <td class="text:meta">flex gap (sm, md, lg or xl)</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <!-- example -->
+          <p>Here is an example for use the flex on an element:</p>
           <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
-            <!-- code .. -->
+            <div class="card border:default pd:md wd:4/12" flex="ai:center jc:center fd:col">
+              <h3 class="card-title">Flex title</h3>
+              <span>Lorem ipsum dolor sit amet.</span>
+            </div>
           </div>
         </section>
 

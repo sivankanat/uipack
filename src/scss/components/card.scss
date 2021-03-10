@@ -2,34 +2,11 @@
 * UIPack cards
 * 
 */
-
 .#{$put}card {
   position: relative;
-
-  &-default {
-    box-shadow: map-get($shadows, "sm");
-  } //default
-
-  .#{$put}card-body,
-  .#{$put}card-header,
-  .#{$put}card-footer,
-  .#{$put}card-title {
-    padding: map-get($spaces, "md");
-  }
-
-  .#{$put}card-footer,
-  .#{$put}card-header,
-  .#{$put}card-body {
-    .#{$put}card-title {
-      padding: 0;
-    }
-  }
-
-  .#{$put}card-header {
-    border-bottom: 1px solid map-get($theme, "border-color");
-  }
-
-  .#{$put}card-footer {
-    border-top: 1px solid map-get($theme, "border-color");
+  .card-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
   }
 }

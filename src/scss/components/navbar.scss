@@ -65,7 +65,7 @@ $navbarItemMr: map-get($navbar, item-margin);
     display: flex !important;
     list-style: none;
     padding: 0;
-    @media (max-width: map-get($screen_sizes, "md")) {
+    @media (max-width: map-get($screens, "md")) {
       display: inherit !important;
       visibility: hidden;
       transform: translateY(36px);

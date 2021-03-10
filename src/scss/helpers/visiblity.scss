@@ -9,7 +9,7 @@
   display: block !important;
 }
 
-@each $name, $size in $screen_sizes {
+@each $name, $size in $screens {
   @media screen and(min-width: $size) {
     .#{$name}\@hidden {
       display: none !important;

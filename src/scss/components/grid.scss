@@ -26,7 +26,7 @@
 }
 
 
-@each $key, $val in $screen_sizes {
+@each $key, $val in $screens {
   @media screen and(min-width: #{$val}) {
     @for $i from 1 through 12 {
       [#{$put}grid~="#{$key}@cols:#{$i}"] {

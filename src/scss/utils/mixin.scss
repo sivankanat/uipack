@@ -54,7 +54,7 @@ $prt3: (
 
 // width eg: md@wd(x/x)
 @mixin res-width() {
-  @each $name, $size in $screen_sizes {
+  @each $name, $size in $screens {
     @media screen and(min-width: $size) {
       //12
       @for $i from 1 through 12 {

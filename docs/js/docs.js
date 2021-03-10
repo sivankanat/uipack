@@ -84,12 +84,15 @@ function _nonIterableRest() {
 
 var pages = {
   over: {
-    Overview: "index.html",
+    Overview: "./",
     Install: "install.html"
   },
   docs: {
     Starter: "starter.html",
-    Navbar: "navbar.html"
+    Navbar: "navbar.html",
+    Card: "card.html",
+    Table: "table.html",
+    Flex: "flex.html"
   }
 };
 var overEl = document.querySelector('.sidebar-nav li.overview ul.child');
@@ -101,7 +104,6 @@ for (var _i = 0, _Object$entries = Object.entries(pages.over); _i < _Object$entr
       key = _Object$entries$_i[0],
       val = _Object$entries$_i[1];
 
-  //console.log(key + ' : ' + value);
   window.location.pathname.includes(val) ? cls = " class='active' " : '';
   overEl.innerHTML += "<li ".concat(cls, "><a href=\"").concat(val, "\">").concat(key, "</a></li>");
   cls = '';

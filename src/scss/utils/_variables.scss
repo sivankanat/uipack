@@ -30,7 +30,7 @@ $navbar: (
 $colors: (
   "font": #221f25,
   "link": inherit,
-  "theme": orange,
+  "theme": #c3c6ca,
   "border": #eee,
   //other
   "muted": #eee,
@@ -52,7 +52,7 @@ $linears: (
 $container_max: 1440px;
 
 // screen sizes
-$screen_sizes: (
+$screens: (
   xs: 414px,
   sm: 640px,
   md: 768px,
@@ -86,6 +86,7 @@ $heading_sizes: (
   "lg": 200%,
   "xl": 250%,
 );
+
 //text sizes
 $text_sizes: (
   "xs": 88%,
@@ -105,23 +106,30 @@ $shadows: (
 );
 
 // borders
-$border_radius: (
+$borders: (
+  rem: (
+    "border": none,
+  ),
+  default: (
+    "border": 1px solid var(--color-border),
+    "border-radius": 2px,
+  ),
+  bottom: (
+    "border-bottom": 1px solid var(--color-border),
+  ),
+  top: (
+    "border-top": 1px solid var(--color-border),
+  ),
+);
+// border shapes
+$border_shapes: (
   "round": 2px,
   "pill": 700px,
   "circle": 50%,
   "20": 20px,
 );
 
-$border_shapes: (
-  rem: (
-    "border": none,
-  ),
-  default: (
-    "border": 1px solid map-get($theme, "border-color"),
-    "border-radius": 2px,
-  ),
-);
-
+// selection
 $selection: (
   "background": #221f25,
   "color": white,

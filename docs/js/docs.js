@@ -92,7 +92,8 @@ var pages = {
     Navbar: "navbar.html",
     Card: "card.html",
     Table: "table.html",
-    Flex: "flex.html"
+    Flex: "flex.html",
+    Pagination: "pagination.html"
   }
 };
 var overEl = document.querySelector('.sidebar-nav li.overview ul.child');
@@ -938,3 +939,13 @@ if (document.querySelectorAll('.examp')) {
   'spaces-to-tabs': 2
 });
 Prism.highlightAll(); */
+
+fetch('https://api.github.com/repos/sivankanat/uipack/tags').then(function (res) {
+  return res.json();
+}).then(function (data) {
+  if (document.getElementById('gitReleaseLink')) {
+    var linkEl = document.getElementById('gitReleaseLink');
+    linkEl.href = "https://github.com/sivankanat/uipack/releases/tag/".concat(data[0].name);
+    linkEl.querySelector('#gitReleaseTag').innerHTML = data[0].name;
+  }
+});

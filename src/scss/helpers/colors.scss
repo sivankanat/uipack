@@ -10,7 +10,7 @@
   .#{$put}color\:#{$name} {
     color: $val !important;
   }
-  .#{$put}border\:#{$name} {
+  .#{$put}brd\:#{$name} {
     border-color: $val !important;
   }
 }
@@ -23,7 +23,7 @@
   .#{$put}color\:#{$name} {
     color: $val;
   }
-  .#{$put}border\:#{$name} {
+  .#{$put}brd\:#{$name} {
     border: 1px solid transparent;
     background: linear-gradient(to right, white, white), #{$val};
     background-clip: padding-box, border-box;

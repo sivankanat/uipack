@@ -1,0 +1,164 @@
+<%- include('../parts/header', {title: 'Pagination' , desc:'UIPack Pagination'}) %>
+
+  <!--main-->
+  <main class="docs-main">
+    <div class="docs-main--inner">
+      <p class="text:meta text:sm text:under mb:md"><a
+          href="https://github.com/sivankanat/uipack/blob/main/docs/ejs/pages/pagination.ejs" target="_blank"
+          rel="noopener noreferrer">Edit on github</a>
+      </p>
+
+      <article class="docs-article">
+
+        <section class="docs-section" id="overview">
+          <h2><a href="#overview">#</a>Pagination</h2>
+          <p>Basic Usage</p>
+          <pre class="mb:md language-markup pd:xs wd:max shadow:sm"><code><xmp>
+              <nav class="pagination">..</nav>
+            </xmp></code></pre>
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <nav class="pagination" role="navigation">
+              <ul>
+                <li class="prev"><a href="#" aria-label="Previous">
+                    <svg class="icon:svg" viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                    </svg></a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li class="current"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li class="next"><a href="#" aria-label="Next">
+                    <svg class="icon:svg" viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+                    </svg></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <!-- boxed -->
+        <section class="docs-section" id="PaginationBoxed">
+          <h2><a href="#PaginationBoxed">#</a>Wrap Border</h2>
+          <p>with border</p>
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <nav class="pagination" role="navigation">
+              <ul class="brd:def">
+                <li class="prev"><a href="#" aria-label="Previous">
+                    <svg class="icon:svg" viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                    </svg></a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li class="current"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li class="next"><a href="#" aria-label="Next">
+                    <svg class="icon:svg" viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+                    </svg></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <!-- items border -->
+        <section class="docs-section" id="PaginationItemsBorder">
+          <h2><a href="#PaginationItemsBorder">#</a>Items Border</h2>
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <nav class="pagination" role="navigation">
+              <ul>
+                <li class="prev brd:def"><a href="#" aria-label="Previous">
+                    <svg class="icon:svg" viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                    </svg></a>
+                </li>
+                <li class="brd:def"><a href="#">1</a></li>
+                <li class="current brd:def"><a href="#">2</a></li>
+                <li class="brd:def"><a href="#">3</a></li>
+                <li class="next brd:def"><a href="#" aria-label="Next">
+                    <svg class="icon:svg" viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+                    </svg></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <!-- items border Circle-->
+        <section class="docs-section" id="PaginationItemsBorderCircle">
+          <h2><a href="#PaginationItemsBorderCircle">#</a>Items Border Circle</h2>
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <nav class="pagination" role="navigation">
+              <ul>
+                <li class="prev brd:def brd:pill"><a href="#" aria-label="Previous">
+                    <svg class="icon:svg" viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                    </svg></a>
+                </li>
+                <li class="brd:def brd:pill"><a href="#">1</a></li>
+                <li class="current brd:def brd:pill brd:primary"><a href="#">2</a></li>
+                <li class="brd:def brd:pill"><a href="#">3</a></li>
+                <li class="brd:def brd:pill"><a href="#">4</a></li>
+
+                <li class="next brd:def brd:pill"><a href="#" aria-label="Next">
+                    <svg class="icon:svg" viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+                    </svg></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <p class="mt:md">For border color use:</p>
+          <pre class="mb:md language-markup pd:xs wd:max shadow:sm"><code><xmp>
+            <li class="brd:primary"></li>
+          </xmp></code></pre>
+        </section>
+
+
+        <!-- with text -->
+        <section class="docs-section" id="PaginationWithText">
+          <h2><a href="#PaginationWithText">#</a>With Text</h2>
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <nav class="pagination" role="navigation">
+              <ul>
+                <li class="prev brd:def brd:pill px:sm"><a href="#" aria-label="Previous">
+                    <svg class="icon:svg" viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                    </svg><span>Previous</span></a>
+                </li>
+                <li class="brd:def brd:pill"><a href="#">1</a></li>
+                <li class="current brd:def brd:pill"><a href="#">2</a></li>
+                <li class="brd:def brd:pill"><a href="#">3</a></li>
+                <li class="brd:def brd:pill"><a href="#">4</a></li>
+
+                <li class="next brd:def brd:pill px:sm"><a href="#" aria-label="Next">
+                    <span>Next</span>
+                    <svg class="icon:svg" viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+                    </svg></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+  </main>
+  <!-- main end -->
+
+  <%- include('../parts/footer') %>

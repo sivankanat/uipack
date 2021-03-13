@@ -9,8 +9,10 @@ const pages = {
     Card: "card.html",
     Table: "table.html",
     Flex: "flex.html",
+    Pagination: "pagination.html",
   }
 }
+
 
 let overEl = document.querySelector('.sidebar-nav li.overview ul.child');
 let docsEl = document.querySelector('.sidebar-nav li.docs ul.child');

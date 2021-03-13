@@ -45,7 +45,7 @@ $colors: (
 
 //linears
 $linears: (
-  "linear": "linear-gradient(0deg, #28B4D7, #28B4D7)",
+  "linear": "linear-gradient(0deg, #28B4D7, #d728c1)",
 );
 
 // container
@@ -110,11 +110,11 @@ $borders: (
   rem: (
     "border": none,
   ),
-  default: (
+  def: (
     "border": 1px solid var(--color-border),
     "border-radius": 2px,
   ),
-  bottom: (
+  bot: (
     "border-bottom": 1px solid var(--color-border),
   ),
   top: (

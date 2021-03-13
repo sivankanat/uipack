@@ -1632,7 +1632,7 @@ ul.reset {
   border: 1px solid var(--color-border);
   border-radius: 2px; }
 
-.brd\:bot {
+.brd\:bottom {
   border-bottom: 1px solid var(--color-border); }
 
 .brd\:top {

@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.1.0]: https://www.npmjs.com/package/uipack/v/0.1.1-dev.0
 [0.16.0]: https://github.com/sivankanat/uipack/releases/tag/v0.16.0
 [0.20.0]: https://github.com/sivankanat/uipack/releases/tag/v0.20.0
+[0.22.0]: https://github.com/sivankanat/uipack/releases/tag/v0.22.0
+
+## [0.22.0] - 2021-03-14
+### Changed
+- Added Pagination
+- Bugs
+- Borders Changed
 
 ## [0.20.0] - 2021-03-09
 ### Changed

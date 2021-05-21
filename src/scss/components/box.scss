@@ -1,0 +1,57 @@
+/**
+* UIPack Box
+*
+* @see https://www.w3schools.com/howto/howto_css_aspect_ratio.asp
+* @see https://en.wikipedia.org/wiki/Display_aspect_ratio
+* 
+*/
+
+@mixin aspect-ratio($width, $height) {
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+}
+
+$asr: (
+    16\:9,
+    16,
+    9,
+  ),
+  (
+    3\:2,
+    3,
+    2,
+  ),
+  (
+    1\:1,
+    1,
+    1,
+  ),
+  (
+    8\:5,
+    8,
+    5,
+  ),
+  (
+    4\:3,
+    4,
+    3,
+  );
+.box {
+  position: relative;
+  .box-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  @each $cls, $w, $h in $asr {
+    &-#{$cls} {
+      @include aspect-ratio($w, $h);
+    }
+  }
+}

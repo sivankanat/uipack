@@ -17,6 +17,13 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+.#{$put}my\:a,
+.#{$put}my\:auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .#{$put}mg\:reset {
   margin: 0 !important;
 }

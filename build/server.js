@@ -1,9 +1,6 @@
 const _log = (data) => console.log(data);
 const packageJson = require("../package.json");
-const banner =
-  "/**! UIPack " +
-  packageJson.version +
-  " | https://github.com/sivankanat/uipack#readme | MIT */\n";
+const banner = `/**! UIPack ${packageJson.version} | https://github.com/sivankanat/uipack#readme | MIT */\n`;
 
 /* pack */
 const fs = require("fs"),

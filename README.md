@@ -4,52 +4,52 @@ UIPack - UI Framework
 
 ## Installation
 
-Use the [npm](https://www.npmjs.com/package/uipack) to install UIPack
+Use [NPM](https://www.npmjs.com/package/uipack)
 
-```bash
-npm i uipack
+```
+npm install uipack
 ```
 
 ## Usage
 
-Recommended installation:
-
-### node-sass
-
-```
-npm install --save-dev node-sass
-```
-
-via cli use `--include-path`:
-
-example:
-
-```json
-"scripts": {
-    "sass": "node-sass app.scss app.css --include-path node_modules/uipack/src/scss"
-  }
-```
-
-and add your app.scss file:
+import UIPack
 
 ```scss
-@import "uipack.scss";
+@import "~uipack/src/scss/uipack.scss";
 ```
 
-or for advanced usage:
+## Configuration
+
+Customize
+
+- create your variables.scss file.
+- clone the ` ~uipack/src/scss/utils/variables.scss` content to your variables.scss file
 
 ```scss
-@import "utils/index";
-// customize
+// your variables
+@import "variables.scss";
 
-@import "base/index";
-@import "components/index";
-@import "helpers/index";
+@import "~uipack/src/scss/utils/index";
+@import "~uipack/src/scss/base/index";
+@import "~uipack/src/scss/helpers/index";
+@import "~uipack/src/scss/elements/index";
+@import "~uipack/src/scss/components/index";
 ```
+
+## Browser Support
+
+Used [browserlist](https://github.com/browserslist/browserslist) and [autoprefixer](https://github.com/postcss/autoprefixer)
+
+- Chrome
+- Safari
+- Firefox
+- Opera
+- Edge
+- IE (not guaranteed)
 
 ## Documentation
 
-https://sivankanat.github.io/uipack/
+[uipack/docs](https://sivankanat.github.io/uipack/)
 
 ```
 working on updates

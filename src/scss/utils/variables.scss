@@ -90,7 +90,7 @@ $text_sizes: (
 
 // shadow
 $shadows: (
-  rem: "none",
+  none: "none",
   sm: 0px 2px 6px rgba(0, 0, 0, 0.1),
   md: 0px 4px 12px rgba(0, 0, 0, 0.09),
   lg: 0px 8px 24px rgba(0, 0, 0, 0.09),
@@ -98,7 +98,7 @@ $shadows: (
 
 // borders
 $borders: (
-  rem: (
+  none: (
     "border": none,
   ),
   def: (

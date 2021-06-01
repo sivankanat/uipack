@@ -13,10 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.23.0] - 2021-05-21
 
-### Changed
+### Added
 
-- Added box
+- Added box module
+
+### Fixed
+
 - Bugs
+
+### Removed
+
 - Removed box sizes
 
 ## [0.22.0] - 2021-03-14

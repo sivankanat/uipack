@@ -7,10 +7,10 @@
   [#{$put}flex~="gap:#{$name}"] {
     flex-direction: row;
     margin-left: -#{$size};
-    margin-bottom: -#{$size};
+    margin-top: -#{$size};
     > * {
       padding-left: #{$size};
-      margin-bottom: #{$size};
+      margin-top: #{$size};
     }
   }
 }

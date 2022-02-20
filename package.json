@@ -1,6 +1,6 @@
 {
   "name": "uipack",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "description": "UIPack - UI UX Framework - CSS Modules",
   "main": "src/js/uipack.js",
   "scripts": {

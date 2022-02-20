@@ -3,6 +3,7 @@
 * 
 */
 
+/* sizes */
 .#{$put}text {
   //sizes
   @each $key, $val in $text_sizes {
@@ -10,6 +11,13 @@
       font-size: $val;
     }
   }
+
+  /* headings */
+  &\:h1 {
+    
+  }
+
+  /* utils */
   &\:meta {
     color: map-get($colors, "secondary");
   }
@@ -45,9 +53,13 @@
   }
 }
 
-/* weigths */
-@each $weight in (100, 200, 300, 400, 500, 600, 700) {
+/* font weight */
+@each $weight in (100, 200, 300, 400, 500, 600, 700, 800, 900) {
   .text\:#{$weight} {
     font-weight: #{$weight} !important;
   }
+}
+
+.lh\:1 {
+  line-height: 1;
 }

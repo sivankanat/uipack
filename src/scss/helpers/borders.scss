@@ -5,7 +5,7 @@
 
 /* custom borders */
 @each $name, $vals in $borders {
-  .#{$put}brd\:#{$name} {
+  .#{$put}border\:#{$name} {
     @each $key, $val in $vals {
       #{$key}: #{$val};
     }
@@ -14,7 +14,15 @@
 
 /* border radius */
 @each $key, $val in $border_shapes {
-  .#{$put}brd\:#{$key} {
+  .#{$put}border\:#{$key} {
     border-radius: $val;
   }
+}
+
+.#{$put}border\:solid {
+  border-style: solid;
+}
+
+.#{$put}border\:dashed {
+  border-style: dashed !important;
 }

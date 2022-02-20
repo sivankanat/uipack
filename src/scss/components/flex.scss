@@ -35,6 +35,10 @@
   align-items: center;
 }
 
+[#{$put}flex*="as:end"] {
+  align-self: flex-end;
+}
+
 [#{$put}flex~="jc:center"] {
   justify-content: center;
 }

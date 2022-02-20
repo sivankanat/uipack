@@ -73,46 +73,54 @@ input[type="radio"] {
 }
 
 /* form */
-form.#{$put}form {
-  label .#{$put}helping {
-    color: #aaa;
-    font-size: 92%;
-    margin: 0;
+
+label .#{$put}helping {
+  color: #aaa;
+  font-size: 92%;
+  margin: 0;
+}
+.#{$put}field\:h {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  & > * {
+    flex: 1;
   }
-  .#{$put}field\:h {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 1rem;
-    & > * {
-      flex: 1;
-    }
-    & > *:nth-child(1) {
-      width: 200px;
-      flex: unset;
-    }
+  & > *:nth-child(1) {
+    width: 200px;
+    flex: unset;
+  }
+}
+
+/* v */
+.#{$put}field\:v {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+/* filed:g */
+.#{$put}field\:g {
+  display: flex;
+  margin-bottom: 1rem;
+
+  @media (max-width: map-get($screens, "md" )) {
+    flex-direction: column;
   }
 
-  /* v */
-  .#{$put}field\:v {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    margin-bottom: 1rem;
-  }
-  /* filed:g */
-  .#{$put}field\:g {
-    display: flex;
-    margin-bottom: 1rem;
-    > * {
-      max-width: 100%;
-      flex: 1;
-      margin-right: 1rem;
-      > input {
-        width: 100%;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
+  > * {
+    max-width: 100%;
+    flex: 1;
+    margin-right: 1rem;
+
+    @media (max-width: map-get($screens, "md" )) {
+      margin-right: 0;
+    }
+    > input {
+      width: 100%;
+    }
+    &:last-child {
+      margin-right: 0;
     }
   }
 }

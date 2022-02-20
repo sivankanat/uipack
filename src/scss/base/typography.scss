@@ -14,3 +14,89 @@ ul.#{$put}reset {
   margin: 0;
   padding: 0;
 }
+
+/* Heading */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  color: inherit;
+}
+
+h1,
+.h1 {
+  font-size: 2.5rem;
+}
+h2,
+.h2 {
+  font-size: 2rem;
+}
+h3,
+.h3 {
+  font-size: 1.75rem;
+}
+h4,
+.h4 {
+  font-size: 1.5rem;
+}
+h5,
+.h5 {
+  font-size: 1.25rem;
+}
+h6,
+.h6 {
+  font-size: 1rem;
+}
+
+/* text */
+p {
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+
+blockquote {
+  margin: 0.7rem auto;
+  padding: 0.3rem 0.5rem;
+  border-left: 2px solid rgb(173, 173, 173);
+  opacity: 0.6;
+}
+code {
+  background: hsl(220, 5%, 95%);
+  font-size: inherit;
+  font-family: monospace;
+  line-height: inherit;
+  padding: 0.1rem 0.3rem;
+  display: inline-block;
+}
+
+details {
+  padding: 1rem;
+  background: hsl(220, 5%, 95%);
+  margin: 1rem 0;
+  > * {
+    padding-top: 0.5rem;
+  }
+  summary {
+    padding-top: 0;
+    cursor: pointer;
+  }
+}
+
+/* list */
+
+::marker {
+  color: hsl(224, 5%, 40%);
+}

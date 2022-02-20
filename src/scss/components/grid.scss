@@ -17,20 +17,18 @@
   }
 }
 
-
 @for $i from 1 through 12 {
   [#{$put}grid~="cols:#{$i}"] {
-    $size: percentage($i / 100) * 0.1;
+    $size: (($i / 100) * 100%) * 0.1;
     grid-template-columns: repeat(#{$i}, minmax($size, 1fr));
   }
 }
-
 
 @each $key, $val in $screens {
   @media screen and(min-width: #{$val}) {
     @for $i from 1 through 12 {
       [#{$put}grid~="#{$key}@cols:#{$i}"] {
-        $size: percentage($i / 100) * 0.1;
+        $size: (($i / 100) * 100%) * 0.1;
         grid-template-columns: repeat(#{$i}, minmax($size, 1fr));
       }
     }

@@ -1,8 +1,8 @@
-<%- include('../parts/header', {title: 'Card' , desc:'UIPack card component'}) %>
+<%- include('partials/header', {title: 'Card' , desc:'UIPack card component'}) %>
 
   <!--main-->
-  <main class="docs-main">
-    <div class="docs-main--inner">
+  <main class="docs_main expand">
+    <div class="docs_main--inner container">
       <p class="text:meta text:sm text:under mb:md"><a
           href="https://github.com/sivankanat/uipack/blob/main/docs/ejs/pages/card.ejs" target="_blank"
           rel="noopener noreferrer">Edit on github</a>
@@ -16,7 +16,7 @@
 
           <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
             <div class="grid" grid="cols:1 md@cols:2">
-              <div class="card brd:def pd:md">
+              <div class="card border:def pd:md">
                 <h3 class="card-title mb:sm">Card Basic</h3>
                 <p class="reset card-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                 <div class="card-footer mt:sm">
@@ -40,9 +40,9 @@
 
           <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
             <!-- card -->
-            <div class="card brd:def wd:5/12">
+            <div class="card border:def wd:5/12">
               <!-- card header -->
-              <div class="card-header pd:md mt:sm brd:bottom">
+              <div class="card-header pd:md mt:sm border:bottom">
                 <h2 class="card-title">Card Title</h2>
               </div>
               <!-- card body -->
@@ -53,7 +53,7 @@
                   impedit ipsam eligendi.</p>
               </div>
               <!-- card footer -->
-              <div class="card-footer pd:md mt:ms brd:top">
+              <div class="card-footer pd:md mt:ms border:top">
                 <button class="btn:sm">Card btn</button>
               </div>
 
@@ -68,4 +68,4 @@
   </main>
   <!-- main end -->
 
-  <%- include('../parts/footer') %>
+  <%- include('partials/footer') %>

@@ -29,25 +29,25 @@ $prt3: (
 @mixin width {
   @for $i from 1 through 12 {
     .#{$put}wd\:#{$i}\/12 {
-      width: percentage($i/12);
+      width: (($i / 12) * 100%);
     }
   }
   // ptr
   @each $key, $val in $prt {
     .#{$put}wd\:#{$key}\/#{$val} {
-      width: percentage($key/$val);
+      width: ($key / $val) * 100%;
     }
   }
   // ptr2
   @each $key, $val in $prt2 {
     .#{$put}wd\:#{$key}\/#{$val} {
-      width: percentage($key/$val);
+      width: (($key / $val) * 100%);
     }
   }
   // ptr3
   @each $key, $val in $prt3 {
     .#{$put}wd\:#{$key}\/#{$val} {
-      width: percentage($key/$val);
+      width: (($key / $val) * 100%);
     }
   }
 }
@@ -59,25 +59,25 @@ $prt3: (
       //12
       @for $i from 1 through 12 {
         .#{$put}#{$name}\@wd\:#{$i}\/12 {
-          width: percentage($i/12);
+          width: (($i / 12) * 100%);
         }
       }
       // ptr
       @each $key, $val in $prt {
         .#{$put}#{$name}\@wd\:#{$key}\/#{$val} {
-          width: percentage($key/$val);
+          width: (($key / $val) * 100%);
         }
       }
       // ptr2
       @each $key, $val in $prt2 {
         .#{$put}#{$name}\@wd\:#{$key}\/#{$val} {
-          width: percentage($key/$val);
+          width: (($key / $val) * 100%);
         }
       }
       // ptr3
       @each $key, $val in $prt3 {
         .#{$put}#{$name}\@wd\:#{$key}\/#{$val} {
-          width: percentage($key/$val);
+          width: (($key / $val) * 100%);
         }
       }
     }

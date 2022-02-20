@@ -5,7 +5,6 @@ $put: "";
 // theme
 $theme: (
   font: (
-    "Catamaran",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -17,13 +16,8 @@ $theme: (
     "Helvetica Neue",
     sans-serif,
   ),
-  font-color: #221f25,
   font-size: 12pt,
-  line-height: 1,
-  link-color: inherit,
-  bg-muted: hsl(220deg, 8%, 95%),
-  bg-muted-2: hsl(220deg, 8%, 90%),
-  border-color: #eee,
+  line-height: 1.5,
 );
 
 // navbar
@@ -33,6 +27,12 @@ $navbar: (
 
 //colors
 $colors: (
+  "font": #221f25,
+  "link": inherit,
+  "theme": #c3c6ca,
+  "border": #eee,
+  //other
+  "muted": #eee,
   "primary": hsl(225deg, 100%, 50%),
   "secondary": hsl(225deg, 10%, 55%),
   "success": hsl(135deg, 85%, 40%),
@@ -44,10 +44,13 @@ $colors: (
 
 //linears
 $linears: (
-  "linear": "linear-gradient(0deg, #28B4D7, #28B4D7)",
+  "linear": "linear-gradient(0deg, #28B4D7, #d728c1)",
 );
+
+// container
+$container_max: 1440px;
+
 // screen sizes
-$container_max: 1280px;
 $screens: (
   xs: 414px,
   sm: 640px,
@@ -56,18 +59,9 @@ $screens: (
   xl: 1280px,
 );
 
-// width sizes
-$box_sizes: (
-  xs: 2rem,
-  sm: 3rem,
-  md: 4rem,
-  lg: 6rem,
-  xl: 8rem,
-);
-
 // spacing
 $spaces: (
-  "remove": 0,
+  "rem": 0,
   "xs": 0.25rem,
   "sm": 0.75rem,
   "md": 1.1rem,
@@ -82,9 +76,12 @@ $heading_sizes: (
   "lg": 200%,
   "xl": 250%,
 );
+
 //text sizes
 $text_sizes: (
-  "sm": 93%,
+  "xs": 88%,
+  "sm": 94%,
+  "normal": 100%,
   "md": 125%,
   "lg": 150%,
   "xl": 175%,
@@ -93,30 +90,36 @@ $text_sizes: (
 // shadow
 $shadows: (
   none: "none",
-  remove: "none",
   sm: 0px 2px 6px rgba(0, 0, 0, 0.1),
   md: 0px 4px 12px rgba(0, 0, 0, 0.09),
   lg: 0px 8px 24px rgba(0, 0, 0, 0.09),
 );
 
 // borders
-$border_radius: (
+$borders: (
+  none: (
+    "border": "none!important",
+  ),
+  def: (
+    "border": 1px solid var(--color-border),
+    "border-radius": 2px,
+  ),
+  bottom: (
+    "border-bottom": 1px solid var(--color-border),
+  ),
+  top: (
+    "border-top": 1px solid var(--color-border),
+  ),
+);
+// border shapes
+$border_shapes: (
   "round": 2px,
   "pill": 700px,
   "circle": 50%,
   "20": 20px,
 );
 
-$border_shapes: (
-  none: (
-    "border": none,
-  ),
-  default: (
-    "border": 1px solid map-get($theme, "border-color"),
-    "border-radius": 2px,
-  ),
-);
-
+// selection
 $selection: (
   "background": #221f25,
   "color": white,
@@ -127,12 +130,15 @@ $selection: (
   @each $key, $val in $theme {
     --#{$key}: #{$val};
   }
+
   @each $key, $val in $colors {
     --color-#{$key}: #{$val};
   }
+
   @each $key, $val in $linears {
     --#{$key}: #{$val};
   }
+
   @each $key, $val in $shadows {
     --shadow-#{$key}: #{$val};
   }

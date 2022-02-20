@@ -1,8 +1,8 @@
-<%- include('../parts/header', {title: 'Pagination' , desc:'UIPack Pagination'}) %>
+<%- include('partials/header', {title: 'Pagination' , desc:'UIPack Pagination'}) %>
 
-  <!--main-->
-  <main class="docs-main">
-    <div class="docs-main--inner">
+   <!--main-->
+   <main class="docs_main expand">
+    <div class="docs_main--inner">
       <p class="text:meta text:sm text:under mb:md"><a
           href="https://github.com/sivankanat/uipack/blob/main/docs/ejs/pages/pagination.ejs" target="_blank"
           rel="noopener noreferrer">Edit on github</a>
@@ -45,7 +45,7 @@
           <p>with border</p>
           <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
             <nav class="pagination" role="navigation">
-              <ul class="brd:def">
+              <ul class="border:def">
                 <li class="prev"><a href="#" aria-label="Previous">
                     <svg class="icon:svg" viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -72,16 +72,16 @@
           <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
             <nav class="pagination" role="navigation">
               <ul>
-                <li class="prev brd:def"><a href="#" aria-label="Previous">
+                <li class="prev border:def"><a href="#" aria-label="Previous">
                     <svg class="icon:svg" viewBox="0 0 24 24">
                       <path fill="currentColor"
                         d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
                     </svg></a>
                 </li>
-                <li class="brd:def"><a href="#">1</a></li>
-                <li class="current brd:def"><a href="#">2</a></li>
-                <li class="brd:def"><a href="#">3</a></li>
-                <li class="next brd:def"><a href="#" aria-label="Next">
+                <li class="border:def"><a href="#">1</a></li>
+                <li class="current border:def"><a href="#">2</a></li>
+                <li class="border:def"><a href="#">3</a></li>
+                <li class="next border:def"><a href="#" aria-label="Next">
                     <svg class="icon:svg" viewBox="0 0 24 24">
                       <path fill="currentColor"
                         d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
@@ -98,18 +98,18 @@
           <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
             <nav class="pagination" role="navigation">
               <ul>
-                <li class="prev brd:def brd:pill"><a href="#" aria-label="Previous">
+                <li class="prev border:def border:pill"><a href="#" aria-label="Previous">
                     <svg class="icon:svg" viewBox="0 0 24 24">
                       <path fill="currentColor"
                         d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
                     </svg></a>
                 </li>
-                <li class="brd:def brd:pill"><a href="#">1</a></li>
-                <li class="current brd:def brd:pill brd:primary"><a href="#">2</a></li>
-                <li class="brd:def brd:pill"><a href="#">3</a></li>
-                <li class="brd:def brd:pill"><a href="#">4</a></li>
+                <li class="border:def border:pill"><a href="#">1</a></li>
+                <li class="current border:def border:pill border:primary"><a href="#">2</a></li>
+                <li class="border:def border:pill"><a href="#">3</a></li>
+                <li class="border:def border:pill"><a href="#">4</a></li>
 
-                <li class="next brd:def brd:pill"><a href="#" aria-label="Next">
+                <li class="next border:def border:pill"><a href="#" aria-label="Next">
                     <svg class="icon:svg" viewBox="0 0 24 24">
                       <path fill="currentColor"
                         d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
@@ -121,7 +121,7 @@
 
           <p class="mt:md">For border color use:</p>
           <pre class="mb:md language-markup pd:xs wd:max shadow:sm"><code><xmp>
-            <li class="brd:primary"></li>
+            <li class="border:primary"></li>
           </xmp></code></pre>
         </section>
 
@@ -132,18 +132,18 @@
           <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
             <nav class="pagination" role="navigation">
               <ul>
-                <li class="prev brd:def brd:pill px:sm"><a href="#" aria-label="Previous">
+                <li class="prev border:def border:pill px:sm"><a href="#" aria-label="Previous">
                     <svg class="icon:svg" viewBox="0 0 24 24">
                       <path fill="currentColor"
                         d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
                     </svg><span>Previous</span></a>
                 </li>
-                <li class="brd:def brd:pill"><a href="#">1</a></li>
-                <li class="current brd:def brd:pill"><a href="#">2</a></li>
-                <li class="brd:def brd:pill"><a href="#">3</a></li>
-                <li class="brd:def brd:pill"><a href="#">4</a></li>
+                <li class="border:def border:pill"><a href="#">1</a></li>
+                <li class="current border:def border:pill"><a href="#">2</a></li>
+                <li class="border:def border:pill"><a href="#">3</a></li>
+                <li class="border:def border:pill"><a href="#">4</a></li>
 
-                <li class="next brd:def brd:pill px:sm"><a href="#" aria-label="Next">
+                <li class="next border:def border:pill px:sm"><a href="#" aria-label="Next">
                     <span>Next</span>
                     <svg class="icon:svg" viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -161,4 +161,4 @@
   </main>
   <!-- main end -->
 
-  <%- include('../parts/footer') %>
+  <%- include('partials/footer') %>

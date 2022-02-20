@@ -11,6 +11,14 @@
 .#{$put}mr\:auto {
   margin-right: auto;
 }
+.#{$put}mt\:a,
+.#{$put}mt\:auto {
+  margin-top: auto;
+}
+.#{$put}mb\:a,
+.#{$put}mb\:auto {
+  margin-bottom: auto;
+}
 
 .#{$put}mx\:a,
 .#{$put}mx\:auto {
@@ -67,19 +75,19 @@ $paddings: (
 );
 @each $name, $value in $spaces {
   .#{$put}px\:#{$name} {
-    padding-left: $value !important;
-    padding-right: $value !important;
+    padding-left: $value;
+    padding-right: $value;
   }
   .#{$put}py\:#{$name} {
-    padding-top: $value !important;
-    padding-bottom: $value !important;
+    padding-top: $value;
+    padding-bottom: $value;
   }
   .#{$put}pd\:#{$name} {
-    padding: $value !important;
+    padding: $value;
   }
   @each $key, $val in $paddings {
     .#{$val}\:#{$name} {
-      padding-#{$key}: $value !important;
+      padding-#{$key}: $value;
     }
   }
 }

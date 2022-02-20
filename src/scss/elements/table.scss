@@ -4,11 +4,16 @@
 */
 table {
   border-collapse: collapse;
+  th {
+    text-align: start;
+  }
 }
+
 .table {
   border-collapse: collapse;
   /* boxed */
-  &-boxed {
+  &-boxed,
+  &\:boxed {
     border: 1px solid var(--color-border);
     td,
     th {
@@ -18,7 +23,8 @@ table {
   }
 
   /* listed */
-  &-listed {
+  &-listed,
+  &\:listed {
     thead tr {
       border-width: 2px;
     }

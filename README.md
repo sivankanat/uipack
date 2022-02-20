@@ -23,7 +23,7 @@ import UIPack
 Customize
 
 - create your variables.scss file.
-- clone the ` ~uipack/src/scss/utils/variables.scss` content to your variables.scss file
+- clone ` ~uipack/src/scss/utils/variables.scss` file content to your variables.scss file
 
 ```scss
 // your variables
@@ -45,7 +45,6 @@ Used [browserlist](https://github.com/browserslist/browserslist) and [autoprefix
 - Firefox
 - Opera
 - Edge
-- IE (not guaranteed)
 
 ## Documentation
 

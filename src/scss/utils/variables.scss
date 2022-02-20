@@ -5,7 +5,6 @@ $put: "";
 // theme
 $theme: (
   font: (
-    "Space Grotesk",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -17,7 +16,7 @@ $theme: (
     "Helvetica Neue",
     sans-serif,
   ),
-  font-size: 12pt,
+  font-size: 1rem,
   line-height: 1.5,
 );
 
@@ -99,7 +98,7 @@ $shadows: (
 // borders
 $borders: (
   none: (
-    "border": none,
+    "border": "none!important",
   ),
   def: (
     "border": 1px solid var(--color-border),
@@ -131,12 +130,15 @@ $selection: (
   @each $key, $val in $theme {
     --#{$key}: #{$val};
   }
+
   @each $key, $val in $colors {
     --color-#{$key}: #{$val};
   }
+
   @each $key, $val in $linears {
     --#{$key}: #{$val};
   }
+
   @each $key, $val in $shadows {
     --shadow-#{$key}: #{$val};
   }

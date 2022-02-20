@@ -9,14 +9,14 @@ export default (function UIPack() {
         bars.addEventListener('click', function (e) {
           e.preventDefault();
           let target = document.querySelector(`.${this.dataset.target}`);
-          if (target.classList.contains('visible')) {
-            target.classList.remove('visible')
-            target.classList.add('hidden')
-          } else if (target.classList.contains('hidden')) {
-            target.classList.remove('hidden')
-            target.classList.add('visible')
+          if (target.classList.contains('show')) {
+            target.classList.remove('show')
+            target.classList.add('hide')
+          } else if (target.classList.contains('hide')) {
+            target.classList.remove('hide')
+            target.classList.add('show')
           } else {
-            target.classList.add('visible')
+            target.classList.add('show')
           }
         })
       });

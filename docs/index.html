@@ -1,120 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+
   <head>
-    <head>
-      <title>UIPack:Home</title>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="Home page" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
-        rel="stylesheet"
-      />
-      <link rel="stylesheet" href="css/docs.css" />
-    </head>
+    <title>UIPack:Home
+    </title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Home" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="dist/css/docs.css" />
   </head>
+</head>
 
-  <body>
-    <!--app-->
-    <div class="app">
-      <!--app header-->
-      <header class="docs-header">
-        <div class="container:full">
-          <nav class="navbar docs-navbar py:sm">
-            <a
-              href="#"
-              class="navbar-bars"
-              aria-label="Toggle Menu"
-              data-target="docs-sidebar"
-            >
-              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"
-                />
-              </svg>
-            </a>
+<body>
+  <!--app-->
+  <div class="app">
+    <!--app header-->
+    <header class="docs-header">
+      <div class="container:full">
+        <nav class="navbar docs-navbar py:sm">
+          <a href="#" class="navbar-bars" aria-label="Toggle Menu" data-target="docs_sidebar">
+            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+            </svg>
+          </a>
 
-            <div class="navbar-item">
-              <a class="navbar-brand" href="./">UIPack</a
-              ><span class="ml:xs">/ Docs</span>
-            </div>
-            <div class="navbar-item ml:a">
-              <a
-                flex="ai:center jc:center"
-                id="gitReleaseLink"
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
-                  ></path>
-                </svg>
-                <span id="gitReleaseTag"></span>
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header>
-
-      <!--app content-->
-      <div class="container:full docs-content">
-        <!--sidebar-->
-        <div class="docs-sidebar visible">
-          <div class="docs-sidebar--inner">
-            <nav class="sidebar-nav" role="navigation">
-              <ul class="reset">
-                <li class="overview">
-                  <span class="icon-duo text:meta">
-                    <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                      <path
-                        fill="currentColor"
-                        d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"
-                      ></path>
-                    </svg>
-                    <span class="last">Overview</span>
-                  </span>
-                  <ul class="child"></ul>
-                </li>
-                <!--docs-->
-                <li class="docs">
-                  <span class="icon-duo text:meta">
-                    <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                      <path
-                        fill="currentColor"
-                        d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"
-                      ></path></svg
-                    ><span class="last">Scenarios</span>
-                  </span>
-                  <ul class="child"></ul>
-                </li>
-              </ul>
-            </nav>
+          <div class="navbar-item">
+            <a class="navbar-brand" href="./">UIPack</a><span class="ml:xs">/ Docs</span>
           </div>
-        </div>
-        <!--sidebar end-->
+          <div class="navbar-item ml:a">
+            <a flex="ai:center jc:center" id="gitReleaseLink" href="" target="_blank" rel="noopener noreferrer">
+              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z">
+                </path>
+              </svg>
+              <span id="gitReleaseTag"></span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
 
+    <!--app content-->
+    <div id="content">
+      <div class="container:full">
+        <div class="flex">
+          <!--sidebar-->
+          <div class="docs_sidebar show">
+  <div class="docs_sidebar--inner">
+    <nav class="sidebar-nav" role="navigation">
+      <ul class="reset">
+        <li class="overview">
+          <span class="icon:duo __label">
+            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z">
+              </path>
+            </svg>
+            <span class="last">Overview</span>
+          </span>
+          <ul class="child"></ul>
+        </li>
+        <!--components-->
+        <li class="base">
+          <span class="icon:duo __label">
+            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z">
+              </path>
+            </svg><span class="last">Base</span>
+          </span>
+          <ul class="child"></ul>
+        </li>
+        <!--components-->
+        <li class="components">
+          <span class="icon:duo __label">
+            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z">
+              </path>
+            </svg><span class="last">Components</span>
+          </span>
+          <ul class="child"></ul>
+        </li>
 
+        <!--elements-->
+        <li class="elements">
+          <span class="icon:duo __label">
+            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z">
+              </path>
+            </svg><span class="last">Elements</span>
+          </span>
+          <ul class="child"></ul>
+        </li>
+
+        <!-- helpers -->
+        <li class="helpers">
+          <span class="icon:duo __label">
+            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z">
+              </path>
+            </svg><span class="last">Helpers</span>
+          </span>
+          <ul class="child"></ul>
+        </li>
+        <!-- utils -->
+        <li class="utils">
+          <span class="icon:duo __label">
+            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z">
+              </path>
+            </svg><span class="last">Utils</span>
+          </span>
+          <ul class="child"></ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+            <!--sidebar end-->
 
   <!--main-->
-  <main class="docs-main">
-    <div class="docs-main--inner">
-      <h2>Home</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas expedita,
-        natus, reiciendis, dignissimos enim officiis molestias architecto saepe
-        repellat hic necessitatibus illum at blanditiis. Quasi repellendus
-        molestiae quaerat quas rerum!
+  <main class="docs_main expand">
+    <div class="docs_main--inner">
+
+      <p class="text:meta text:sm text:under mb:md"><a
+          href="https://github.com/sivankanat/uipack/blob/main/docs/ejs/pages/starter.ejs" target="_blank"
+          rel="noopener noreferrer">Edit on github</a>
       </p>
+      <article class="docs-article">
+
+        
+        <section class="docs-section" id="overview">
+          <h2><a href="#overview">#</a>Starter</h2>
+          <p>Starter page</p>
+
+          <div class="examp" data-options='{"active": "preview", "lang":"markup"}'>
+            <!-- code .. -->
+          </div>
+        </section>
+
+
+      </article>
     </div>
   </main>
-
+  <!-- main end -->
   </div>
+</div>
+</div>
 <!-- content end -->
 
 <!--app footer-->
@@ -130,7 +173,7 @@
 <!-- app end -->
 
 <!-- assets-->
-<script src="js/docs.js"> </script>
+<script src="dist/js/docs.js"> </script>
 </body>
 
 </html>

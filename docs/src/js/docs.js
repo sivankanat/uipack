@@ -1,7 +1,7 @@
 import UIPack from '../../../src/js/uipack';
 
-import './_pages';
-import './_examp';
+import './modules/_pages';
+import './modules/_examp';
 
 fetch('https://api.github.com/repos/sivankanat/uipack/tags')
   .then(res => res.json())

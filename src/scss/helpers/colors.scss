@@ -10,8 +10,11 @@
   .#{$put}color\:#{$name} {
     color: $val !important;
   }
-  .#{$put}brd\:#{$name} {
+  .#{$put}border\:#{$name} {
     border-color: $val !important;
+  }
+  .#{$put}fill\:#{$name} {
+    fill: $val !important;
   }
 }
 

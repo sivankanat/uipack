@@ -3,18 +3,40 @@
 * 
 */
 .#{$put}hidden {
-  display: none !important;
+  visibility: hidden !important;
 }
 .#{$put}visible {
+  visibility: visible !important;
+}
+
+@each $name, $size in $screens {
+  @media screen and(min-width: $size) {
+    .#{$name}\@hidden,
+    .hidden\@#{$name} {
+      visibility: hidden !important;
+    }
+    .#{$name}\@visible,
+    .visible\@#{$name} {
+      visibility: visible !important;
+    }
+  }
+}
+
+.#{$put}hide {
+  display: none !important;
+}
+.#{$put}show {
   display: block !important;
 }
 
 @each $name, $size in $screens {
   @media screen and(min-width: $size) {
-    .#{$name}\@hidden {
+    .#{$name}\@hide,
+    .hide\@#{$name} {
       display: none !important;
     }
-    .#{$name}\@visible {
+    .#{$name}\@show,
+    .show\@#{$name} {
       display: block !important;
     }
   }

@@ -1,5 +1,5 @@
 /* examp */
-import './_prism';
+import '../libs/_prism';
 
 if (document.querySelectorAll('.examp')) {
   const examps = document.querySelectorAll('.examp');

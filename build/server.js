@@ -1,178 +1,129 @@
-const _log = (data) => console.log(data);
-const packageJson = require("../package.json");
-const banner = `/**! UIPack ${packageJson.version} | https://github.com/sivankanat/uipack#readme | MIT */\n`;
-
-/* pack */
-const fs = require("fs"),
-  bs = require("browser-sync").create("UIPack"),
-  pug = require("pug"),
-  ejs = require("ejs"),
+const
+  packageJson = require("../package.json"),
+  banner = `/**! UIPack ${packageJson.version} | https://github.com/sivankanat/uipack#readme | MIT */\n`,
+  fs = require("fs"),
+  bs = require("browser-sync").create('UIPack'),
   sass = require("node-sass"),
   postcss = require("postcss"),
   autoprefixer = require("autoprefixer"),
   rollup = require("rollup"),
   comonjs = require("@rollup/plugin-commonjs"),
   { babel } = require("@rollup/plugin-babel"),
-  { nodeResolve } = require("@rollup/plugin-node-resolve");
+  { nodeResolve } = require("@rollup/plugin-node-resolve"),
+  ejs = require('ejs');
+
 
 /* bs */
 bs.init({
   files: [
     "dist/css/uipack.css",
-    "docs/css/docs.css",
-    "docs/js/docs.js",
-    "**/*.html",
+    "docs/dist/css/docs.css",
+    "docs/dist/js/docs.js",
+    "docs/**/*.html",
   ],
   port: 9000,
   ui: false,
-  server: {
-    baseDir: ".",
-    directory: false,
-  },
-  startPath: "docs",
-  open: false,
+  server: 'docs',
+  open: true,
 });
 
-// pug
-/* bs.watch('docs/pug/*.pug', function (event, file) {
-  //events: unlink, add, change
-  filename = file.replace('docs\\pug\\', '').replace('.pug', '').trim().toLowerCase();
-  if (!file.includes('includes')) {
-    if (event == 'change') {
-      setTimeout(() => {
-        pug.renderFile(`docs/pug/${filename}.pug`, { pretty: true }, function (err, res) {
-          if (err) console.log(err);
-          else {
-            fs.writeFileSync(`docs/${filename}.html`, res, () => true)
-            console.log(`change: ${file} -> docs/${filename}.html`);
-            setTimeout(() => bs.reload(), 5);
-          }
-        });
-      }, 70);
-    }
-
-    if (event == "unlink") {
-      fs.unlink(`docs/${filename}.html`, function (err) {
-        if (err) console.log(err);
-        else console.log(`unlink: ${file} -> docs/${filename}.html`);
-      })
-    }
-  }
-}) */
-
 // ejs
-bs.watch("docs/ejs/pages/*.ejs", function (event, file) {
+bs.watch("docs/src/ejs/*.ejs", function (event, file) {
   //events: unlink, add, change
   filename = file
-    .replace("docs\\ejs\\pages\\", "")
+    .replace("docs\\src\\ejs\\", "")
     .replace(".ejs", "")
     .trim()
     .toLowerCase();
 
   if (event == "change") {
     setTimeout(() => {
-      ejs.renderFile(`docs/ejs/pages/${filename}.ejs`, {}, function (err, str) {
+      ejs.renderFile(`docs/src/ejs/${filename}.ejs`, {}, function (err, str) {
         // str => Rendered HTML string
         err
-          ? _log(err)
+          ? console.log(err)
           : fs.writeFileSync(`docs/${filename}.html`, str, () => true);
-        _log(`${filename} changed`);
+        console.log(`${filename} changed`);
       });
-    }, 70);
+    }, 100);
   }
 
   if (event == "unlink") {
     fs.unlink(`docs/${filename}.html`, function (err) {
-      err ? _log(err) : _log(`unlink: ${file} -> docs/${filename}.html`);
+      err ? console.log(err) : console.log(`unlink: ${file} -> docs/${filename}.html`);
     });
   }
 });
 
-const renderScss = (source, out) => {
+
+const renderSass = function (srcfile, distfile) {
   setTimeout(() => {
-    sass.render(
-      {
-        file: source,
-        outFile: out,
-        sourceMap: true,
-      },
-      (err, res) => (err ? _log(err) : pcss(res))
-    );
-  }, 100);
-  let pcss = (result) => {
-    postcss([autoprefixer])
-      .process(result.css, { from: source, to: out })
-      .then((result) =>
-        fs.writeFile(out, banner + result.css, (err) =>
-          err ? _log(err) : _log(`${source} => ${out}`)
-        )
-      );
-  };
-};
+    sass.render({
+      file: srcfile,
+      outFile: distfile,
+      sourceMap: true,
+    }, function (err, result) {
+      if (err) { console.log(err) } else {
+        postcss([autoprefixer])
+          .process(result.css, { from: srcfile, to: distfile })
+          .then((result) => fs.writeFile(distfile, banner + result.css, (err) => err ? console.log(err) : console.log(`${srcfile} => ${distfile}`))
+          );
+      };
+    });
+  }, 200);
+}
 
-// watch sass
-bs.watch("src/scss/**/*.scss", function (event, file) {
-  if (event == "change") {
-    renderScss("src/scss/uipack.scss", "dist/css/uipack.css");
-    renderScss("docs/css/docs.scss", "docs/css/docs.css");
-  }
-});
 
-bs.watch("docs/css/**/*.scss", function (event, file) {
-  if (event == "change") {
-    renderScss("docs/css/docs.scss", "docs/css/docs.css");
+// scss
+bs.watch('src/scss/**/*.scss', function (event, file) {
+  if (event == 'change') {
+    renderSass("src/scss/uipack.scss", "dist/css/uipack.css");
+    renderSass("docs/src/scss/docs.scss", "docs/dist/css/docs.css");
   }
-});
+})
+
+bs.watch('docs/src/scss/**/*.scss', function (event, file) {
+  if (event == 'change') {
+    renderSass("docs/src/scss/docs.scss", "docs/dist/css/docs.css");
+  }
+})
+
+
+const renderJS = async function (srcfile, distfile, file) {
+  const bundle = await rollup.rollup({
+    input: srcfile,
+    plugins: [
+      nodeResolve(),
+      comonjs(),
+      babel({
+        babelHelpers: "bundled",
+      }),
+    ],
+  });
+  await bundle.write({
+    file: distfile,
+    format: "umd",
+    banner: banner,
+    amd: {
+      id: "UIPack",
+    },
+    name: "UIPack",
+  });
+  await bundle.close();
+  console.log(`${file} changed`);
+
+}
 
 // watch js
 bs.watch("src/js/**/*.js", function (event, file) {
   if (event == "change") {
-    (async () => {
-      const bundle = await rollup.rollup({
-        input: "src/js/uipack.js",
-        plugins: [
-          nodeResolve(),
-          comonjs(),
-          babel({
-            babelHelpers: "bundled",
-          }),
-        ],
-      });
-      await bundle.write({
-        file: "dist/js/uipack.js",
-        format: "umd",
-        banner: banner,
-        amd: {
-          id: "UIPack",
-        },
-        name: "UIPack",
-      });
-      await bundle.close();
-      console.log(`${file} changed`);
-    })();
+    renderJS("src/js/uipack.js", "dist/js/uipack.js", file)
+    renderJS("docs/src/js/docs.js", "docs/dist/js/docs.js", file)
   }
 });
 
-// watch docs js
-bs.watch("docs/js/src/**/*.js", function (event, file) {
-  if (event === "change") {
-    (async () => {
-      const bundle = await rollup.rollup({
-        input: "docs/js/src/docs.js",
-        plugins: [
-          nodeResolve(),
-          babel({
-            babelHelpers: "bundled",
-          }),
-          comonjs(),
-        ],
-      });
-      await bundle.write({
-        file: "docs/js/docs.js",
-        format: "cjs",
-      });
-      await bundle.close();
-      console.log(`${file} changed`);
-    })();
+bs.watch("docs/src/js/**/*.js", function (event, file) {
+  if (event == "change") {
+    renderJS("docs/src/js/docs.js", "docs/dist/js/docs.js", file)
   }
 });

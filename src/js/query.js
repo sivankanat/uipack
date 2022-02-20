@@ -13,6 +13,7 @@ query.prototype.csst = function () {
   })
   return this
 }
+
 query.prototype.css = function () {
   this.el.forEach(function (el) {
     Object.assign(el.style, css)
@@ -25,11 +26,13 @@ query.prototype.get = function () {
   this.el = this.sub
   return this
 }
+
 query.prototype.on = function (event, callback) {
   this.el.forEach(function (el) {
     el.addEventListener(event, callback)
   })
   return this
 }
+
 
 

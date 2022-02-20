@@ -8,6 +8,12 @@
   box-sizing: border-box;
 }
 
+html {
+  @media (max-width: map-get($screens, "sm")) {
+    font-size: 80%;
+  }
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -27,75 +33,7 @@ a {
   cursor: pointer;
 }
 
-/* Heading */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding: 0;
-  margin: 0;
-  line-height: 1;
-  margin-bottom: 0.7rem;
-  font-weight: 600;
-}
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  font-size: 1.5rem;
-}
-h3 {
-  font-size: 1.25rem;
-}
-h4 {
-  font-size: 1.1rem;
-}
-h5,
-h6 {
-  font-size: 1rem;
-}
 
-/* text */
-p {
-  margin: 0;
-  padding-bottom: 0.5rem;
-}
-
-blockquote {
-  margin: 0.7rem auto;
-  padding: 0.3rem 0.5rem;
-  border-left: 2px solid rgb(173, 173, 173);
-  opacity: 0.6;
-}
-code {
-  background: hsl(220, 5%, 95% / 1);
-  font-size: inherit;
-  font-family: monospace;
-  line-height: inherit;
-  padding: 0.1rem 0.3rem;
-  display: inline-block;
-}
-
-details {
-  padding: 1rem;
-  background: hsl(220, 5%, 95% / 1);
-  margin: 1rem 0;
-  > * {
-    padding-top: 0.5rem;
-  }
-  summary {
-    padding-top: 0;
-    cursor: pointer;
-  }
-}
-
-/* list */
-
-::marker {
-  color: hsl(224, 5%, 40% / 1);
-}
 
 /* form */
 button,
@@ -132,11 +70,50 @@ img {
     max-width: 100%;
     padding-left: 1.1rem;
     padding-right: 1.1rem;
+    width: 100%;
   }
 }
 
 ::selection {
   @each $key, $val in $selection {
     #{$key}: #{$val};
+  }
+}
+
+.block {
+  display: block;
+}
+
+// clear
+.clear:before,
+.clear:after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+.clear:after {
+  clear: both;
+}
+
+//spacer
+.spacer {
+  display: inline-block;
+  width: 100%;
+  &\:sm {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  &\:md {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  &\:lg {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  &\:xl {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
   }
 }
